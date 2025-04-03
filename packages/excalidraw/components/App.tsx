@@ -788,6 +788,7 @@ class App extends React.Component<AppProps, AppState> {
         registerAction: (action: Action) => {
           this.actionManager.registerAction(action);
         },
+        getStoreIncrementEmitter: this.getStoreIncrementEmitter,
         refresh: this.refresh,
         setToast: this.setToast,
         id: this.id,
@@ -1884,6 +1885,10 @@ class App extends React.Component<AppProps, AppState> {
 
   public getSceneElements = () => {
     return this.scene.getNonDeletedElements();
+  };
+
+  public getStoreIncrementEmitter = () => {
+    return this.store.onStoreIncrementEmitter;
   };
 
   public onInsertElements = (elements: readonly ExcalidrawElement[]) => {
