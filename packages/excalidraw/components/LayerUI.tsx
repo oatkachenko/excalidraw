@@ -269,7 +269,7 @@ const LayerUI = ({
                           "zen-mode": appState.zenModeEnabled,
                         })}
                       >
-                        {device.editor.isMobile && (
+                        {!device.editor.isMobile && (
                           <Island
                             padding={1}
                             className={clsx("App-toolbar", {
