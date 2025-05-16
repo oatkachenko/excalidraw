@@ -30835,7 +30835,7 @@ var LayerUI = ({
               "zen-mode": appState.zenModeEnabled
             }),
             children: [
-              /* @__PURE__ */ jsxs76(
+              device.editor.isMobile && /* @__PURE__ */ jsxs76(
                 Island,
                 {
                   padding: 1,
