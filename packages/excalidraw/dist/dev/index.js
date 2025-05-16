@@ -453,10 +453,10 @@ import {
   viewportCoordsToSceneCoords,
   wrapEvent,
   wrapText
-} from "./chunk-RZFGVDNX.js";
+} from "./chunk-C47OXI4V.js";
 import {
   define_import_meta_env_default
-} from "./chunk-6P775CMT.js";
+} from "./chunk-FK6MXOUF.js";
 import {
   en_default
 } from "./chunk-LMHBUWQS.js";
@@ -12729,7 +12729,7 @@ var exportCanvas = async (type, elements, appState, files, {
     let blob = canvasToBlob(tempCanvas);
     if (appState.exportEmbedScene) {
       blob = blob.then(
-        (blob2) => import("./data/image-MZH3JWDJ.js").then(
+        (blob2) => import("./data/image-TVYICCDK.js").then(
           ({ encodePngMetadata: encodePngMetadata2 }) => encodePngMetadata2({
             blob: blob2,
             metadata: serializeAsJSON(elements, appState, files, "local")
@@ -24583,6 +24583,8 @@ var MobileMenu = ({
   onPenModeToggle,
   renderTopRightUI,
   renderCustomStats,
+  renderBreadcrumbs,
+  topIslandCustomElements,
   renderSidebars,
   device,
   renderWelcomeScreen,
@@ -24598,18 +24600,29 @@ var MobileMenu = ({
     return /* @__PURE__ */ jsxs49(FixedSideContainer, { side: "top", className: "App-top-bar", children: [
       renderWelcomeScreen && /* @__PURE__ */ jsx88(WelcomeScreenCenterTunnel.Out, {}),
       /* @__PURE__ */ jsx88(Section, { heading: "shapes", children: (heading) => /* @__PURE__ */ jsx88(Stack_default.Col, { gap: 4, align: "center", children: /* @__PURE__ */ jsxs49(Stack_default.Row, { gap: 1, className: "App-toolbar-container", children: [
-        /* @__PURE__ */ jsxs49(Island, { padding: 1, className: "App-toolbar App-toolbar--mobile", children: [
-          heading,
-          /* @__PURE__ */ jsx88(Stack_default.Row, { gap: 1, children: /* @__PURE__ */ jsx88(
-            ShapesSwitcher,
-            {
-              appState,
-              activeTool: appState.activeTool,
-              UIOptions,
-              app
-            }
-          ) })
-        ] }),
+        renderBreadcrumbs && renderBreadcrumbs(true, appState),
+        !device.editor.isMobile && /* @__PURE__ */ jsxs49(
+          Island,
+          {
+            padding: 1,
+            className: "App-toolbar App-toolbar--mobile",
+            children: [
+              heading,
+              /* @__PURE__ */ jsxs49(Stack_default.Row, { gap: 1, children: [
+                /* @__PURE__ */ jsx88(
+                  ShapesSwitcher,
+                  {
+                    appState,
+                    activeTool: appState.activeTool,
+                    UIOptions,
+                    app
+                  }
+                ),
+                topIslandCustomElements && topIslandCustomElements(true, appState)
+              ] })
+            ]
+          }
+        ),
         renderTopRightUI && renderTopRightUI(true, appState),
         /* @__PURE__ */ jsxs49("div", { className: "mobile-misc-tools-container", children: [
           !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && /* @__PURE__ */ jsx88(DefaultSidebarTriggerTunnel.Out, {}),
@@ -30733,7 +30746,9 @@ var LayerUI = ({
   onPenModeToggle,
   showExitZenModeBtn,
   renderTopRightUI,
+  topIslandCustomElements,
   renderCustomStats,
+  renderBreadcrumbs,
   UIOptions,
   onExportImage,
   renderWelcomeScreen,
@@ -30822,7 +30837,10 @@ var LayerUI = ({
     const shouldShowStats = appState.stats.open && !appState.zenModeEnabled && !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector";
     return /* @__PURE__ */ jsx140(FixedSideContainer, { side: "top", children: /* @__PURE__ */ jsxs76("div", { className: "App-menu App-menu_top", children: [
       /* @__PURE__ */ jsxs76(Stack_default.Col, { gap: 6, className: clsx54("App-menu_top__left"), children: [
-        renderCanvasActions(),
+        /* @__PURE__ */ jsxs76(Stack_default.Row, { gap: 1, children: [
+          renderCanvasActions(),
+          renderBreadcrumbs?.(device.editor.isMobile, appState)
+        ] }),
         shouldRenderSelectedShapeActions && renderSelectedShapeActions()
       ] }),
       !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && /* @__PURE__ */ jsx140(Section, { heading: "shapes", className: "shapes-section", children: (heading) => /* @__PURE__ */ jsxs76("div", { style: { position: "relative" }, children: [
@@ -30864,24 +30882,7 @@ var LayerUI = ({
                           penDetected: appState.penDetected
                         }
                       ),
-                      /* @__PURE__ */ jsx140(
-                        LockButton,
-                        {
-                          checked: appState.activeTool.locked,
-                          onChange: onLockToggle,
-                          title: t("toolBar.lock")
-                        }
-                      ),
-                      /* @__PURE__ */ jsx140("div", { className: "App-toolbar__divider" }),
-                      /* @__PURE__ */ jsx140(
-                        HandButton,
-                        {
-                          checked: isHandToolActive(appState),
-                          onChange: () => onHandToolToggle(),
-                          title: t("toolBar.hand"),
-                          isMobile: true
-                        }
-                      ),
+                      appState.penDetected && /* @__PURE__ */ jsx140("div", { className: "App-toolbar__divider" }),
                       /* @__PURE__ */ jsx140(
                         ShapesSwitcher,
                         {
@@ -30890,7 +30891,8 @@ var LayerUI = ({
                           UIOptions,
                           app
                         }
-                      )
+                      ),
+                      topIslandCustomElements?.(device.editor.isMobile, appState)
                     ] })
                   ]
                 }
@@ -30936,8 +30938,37 @@ var LayerUI = ({
               }
             ),
             renderTopRightUI?.(device.editor.isMobile, appState),
-            !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && // hide button when sidebar docked
-            (!isSidebarDocked || appState.openSidebar?.name !== DEFAULT_SIDEBAR.name) && /* @__PURE__ */ jsx140(tunnels.DefaultSidebarTriggerTunnel.Out, {}),
+            /* @__PURE__ */ jsxs76("div", { className: "mobile-misc-tools-container", children: [
+              !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && /* @__PURE__ */ jsx140(tunnels.DefaultSidebarTriggerTunnel.Out, {}),
+              /* @__PURE__ */ jsx140(
+                PenModeButton,
+                {
+                  checked: appState.penMode,
+                  onChange: () => onPenModeToggle(null),
+                  title: t("toolBar.penMode"),
+                  isMobile: true,
+                  penDetected: appState.penDetected
+                }
+              ),
+              /* @__PURE__ */ jsx140(
+                LockButton,
+                {
+                  checked: appState.activeTool.locked,
+                  onChange: onLockToggle,
+                  title: t("toolBar.lock"),
+                  isMobile: true
+                }
+              ),
+              /* @__PURE__ */ jsx140(
+                HandButton,
+                {
+                  checked: isHandToolActive(appState),
+                  onChange: () => onHandToolToggle(),
+                  title: t("toolBar.hand"),
+                  isMobile: true
+                }
+              )
+            ] }),
             shouldShowStats && /* @__PURE__ */ jsx140(
               Stats,
               {
@@ -30977,7 +31008,6 @@ var LayerUI = ({
       {
         __fallback: true,
         icon: LibraryIcon,
-        title: capitalizeString(t("toolBar.library")),
         onToggle: (open) => {
           if (open) {
             trackEvent(
@@ -30987,8 +31017,7 @@ var LayerUI = ({
             );
           }
         },
-        tab: DEFAULT_SIDEBAR.defaultTab,
-        children: t("toolBar.library")
+        tab: DEFAULT_SIDEBAR.defaultTab
       }
     ),
     /* @__PURE__ */ jsx140(DefaultOverwriteConfirmDialog, {}),
@@ -31084,6 +31113,8 @@ var LayerUI = ({
         onHandToolToggle,
         onPenModeToggle,
         renderTopRightUI,
+        renderBreadcrumbs,
+        topIslandCustomElements,
         renderCustomStats,
         renderSidebars,
         device,
@@ -36789,7 +36820,12 @@ var App = class _App extends React43.Component {
   }
   render() {
     const selectedElements = this.scene.getSelectedElements(this.state);
-    const { renderTopRightUI, renderCustomStats } = this.props;
+    const {
+      renderTopRightUI,
+      renderCustomStats,
+      renderBreadcrumbs,
+      topIslandCustomElements
+    } = this.props;
     const sceneNonce = this.scene.getSceneNonce();
     const { elementsMap, visibleElements } = this.renderer.getRenderableElements({
       sceneNonce,
@@ -36858,6 +36894,8 @@ var App = class _App extends React43.Component {
                             onHandToolToggle: this.onHandToolToggle,
                             langCode: getLanguage().code,
                             renderTopRightUI,
+                            renderBreadcrumbs,
+                            topIslandCustomElements,
                             renderCustomStats,
                             showExitZenModeBtn: typeof this.props?.zenModeEnabled === "undefined" && this.state.zenModeEnabled,
                             UIOptions: this.props.UIOptions,
@@ -39852,6 +39890,8 @@ var ExcalidrawBase = (props) => {
     isCollaborating = false,
     onPointerUpdate,
     renderTopRightUI,
+    topIslandCustomElements,
+    renderBreadcrumbs,
     langCode = defaultLang.code,
     viewModeEnabled,
     zenModeEnabled,
@@ -39921,6 +39961,8 @@ var ExcalidrawBase = (props) => {
       isCollaborating,
       onPointerUpdate,
       renderTopRightUI,
+      renderBreadcrumbs,
+      topIslandCustomElements,
       langCode,
       viewModeEnabled,
       zenModeEnabled,

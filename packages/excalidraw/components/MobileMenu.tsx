@@ -46,6 +46,14 @@ type MobileMenuProps = {
     isMobile: boolean,
     appState: UIAppState,
   ) => JSX.Element | null;
+  renderBreadcrumbs?: (
+    isMobile: boolean,
+    appState: UIAppState,
+  ) => JSX.Element | null;
+  topIslandCustomElements?: (
+    isMobile: boolean,
+    appState: UIAppState,
+  ) => JSX.Element | null;
   renderCustomStats?: ExcalidrawProps["renderCustomStats"];
   renderSidebars: () => JSX.Element | null;
   device: Device;
@@ -65,6 +73,8 @@ export const MobileMenu = ({
 
   renderTopRightUI,
   renderCustomStats,
+  renderBreadcrumbs,
+  topIslandCustomElements,
   renderSidebars,
   device,
   renderWelcomeScreen,
@@ -84,17 +94,24 @@ export const MobileMenu = ({
           {(heading: React.ReactNode) => (
             <Stack.Col gap={4} align="center">
               <Stack.Row gap={1} className="App-toolbar-container">
-                <Island padding={1} className="App-toolbar App-toolbar--mobile">
-                  {heading}
-                  <Stack.Row gap={1}>
-                    <ShapesSwitcher
-                      appState={appState}
-                      activeTool={appState.activeTool}
-                      UIOptions={UIOptions}
-                      app={app}
-                    />
-                  </Stack.Row>
-                </Island>
+                {renderBreadcrumbs && renderBreadcrumbs(true, appState)}
+                {!device.editor.isMobile && (
+                  <Island
+                    padding={1}
+                    className="App-toolbar App-toolbar--mobile"
+                  >
+                    {heading}
+                    <Stack.Row gap={1}>
+                      <ShapesSwitcher
+                        appState={appState}
+                        activeTool={appState.activeTool}
+                        UIOptions={UIOptions}
+                        app={app}
+                      />
+                      {topIslandCustomElements && topIslandCustomElements(true, appState)}
+                    </Stack.Row>
+                  </Island>
+                )}
                 {renderTopRightUI && renderTopRightUI(true, appState)}
                 <div className="mobile-misc-tools-container">
                   {!appState.viewModeEnabled &&

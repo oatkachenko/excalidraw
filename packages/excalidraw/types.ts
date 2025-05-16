@@ -549,6 +549,14 @@ export interface ExcalidrawProps {
     isMobile: boolean,
     appState: UIAppState,
   ) => JSX.Element | null;
+  renderBreadcrumbs?: (
+    isMobile: boolean,
+    appState: UIAppState,
+  ) => JSX.Element | null;
+  topIslandCustomElements?: (
+    isMobile: boolean,
+    appState: UIAppState,
+  ) => JSX.Element | null;
   langCode?: Language["code"];
   viewModeEnabled?: boolean;
   zenModeEnabled?: boolean;
