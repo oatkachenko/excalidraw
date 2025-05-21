@@ -429,9 +429,7 @@ const LayerUI = ({
           }
         }}
         tab={DEFAULT_SIDEBAR.defaultTab}
-      >
-        {t("toolBar.library")}
-      </DefaultSidebar.Trigger>
+      ></DefaultSidebar.Trigger>
       <DefaultOverwriteConfirmDialog />
       {appState.openDialog?.name === "ttd" && <TTDDialog __fallback />}
       {/* ------------------------------------------------------------------ */}

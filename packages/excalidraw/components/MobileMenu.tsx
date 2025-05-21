@@ -95,42 +95,12 @@ export const MobileMenu = ({
             <Stack.Col gap={4} align="center">
               <Stack.Row gap={1} className="App-toolbar-container">
                 {renderBreadcrumbs && renderBreadcrumbs(true, appState)}
-                {!device.editor.isMobile && (
-                  <Island
-                    padding={1}
-                    className="App-toolbar App-toolbar--mobile"
-                  >
-                    {heading}
-                    <Stack.Row gap={1}>
-                      <ShapesSwitcher
-                        appState={appState}
-                        activeTool={appState.activeTool}
-                        UIOptions={UIOptions}
-                        app={app}
-                      />
-                      {topIslandCustomElements && topIslandCustomElements(true, appState)}
-                    </Stack.Row>
-                  </Island>
-                )}
                 {renderTopRightUI && renderTopRightUI(true, appState)}
                 <div className="mobile-misc-tools-container">
                   {!appState.viewModeEnabled &&
                     appState.openDialog?.name !== "elementLinkSelector" && (
                       <DefaultSidebarTriggerTunnel.Out />
                     )}
-                  <PenModeButton
-                    checked={appState.penMode}
-                    onChange={() => onPenModeToggle(null)}
-                    title={t("toolBar.penMode")}
-                    isMobile
-                    penDetected={appState.penDetected}
-                  />
-                  <LockButton
-                    checked={appState.activeTool.locked}
-                    onChange={onLockToggle}
-                    title={t("toolBar.lock")}
-                    isMobile
-                  />
                   <HandButton
                     checked={isHandToolActive(appState)}
                     onChange={() => onHandToolToggle()}

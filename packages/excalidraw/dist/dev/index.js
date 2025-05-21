@@ -453,10 +453,10 @@ import {
   viewportCoordsToSceneCoords,
   wrapEvent,
   wrapText
-} from "./chunk-3XP6O4AC.js";
+} from "./chunk-YMWMBXEX.js";
 import {
   define_import_meta_env_default
-} from "./chunk-7J5CNPOY.js";
+} from "./chunk-JEABQ3IW.js";
 import {
   en_default
 } from "./chunk-LMHBUWQS.js";
@@ -12729,7 +12729,7 @@ var exportCanvas = async (type, elements, appState, files, {
     let blob = canvasToBlob(tempCanvas);
     if (appState.exportEmbedScene) {
       blob = blob.then(
-        (blob2) => import("./data/image-JB2H5QUL.js").then(
+        (blob2) => import("./data/image-AX2UXN5G.js").then(
           ({ encodePngMetadata: encodePngMetadata2 }) => encodePngMetadata2({
             blob: blob2,
             metadata: serializeAsJSON(elements, appState, files, "local")
@@ -24523,56 +24523,19 @@ var HintViewer = ({
   return /* @__PURE__ */ jsx85("div", { className: "HintViewer", children: /* @__PURE__ */ jsx85("span", { children: hint }) });
 };
 
-// components/PenModeButton.tsx
-import clsx38 from "clsx";
-import { jsx as jsx86, jsxs as jsxs47 } from "react/jsx-runtime";
-var DEFAULT_SIZE2 = "medium";
-var PenModeButton = (props) => {
-  if (!props.penDetected) {
-    return null;
-  }
-  return /* @__PURE__ */ jsxs47(
-    "label",
-    {
-      className: clsx38(
-        "ToolIcon ToolIcon__penMode",
-        `ToolIcon_size_${DEFAULT_SIZE2}`,
-        {
-          "is-mobile": props.isMobile
-        }
-      ),
-      title: `${props.title}`,
-      children: [
-        /* @__PURE__ */ jsx86(
-          "input",
-          {
-            className: "ToolIcon_type_checkbox",
-            type: "checkbox",
-            name: props.name,
-            onChange: props.onChange,
-            checked: props.checked,
-            "aria-label": props.title
-          }
-        ),
-        /* @__PURE__ */ jsx86("div", { className: "ToolIcon__icon", children: PenModeIcon })
-      ]
-    }
-  );
-};
-
 // components/Section.tsx
-import { Fragment as Fragment11, jsx as jsx87, jsxs as jsxs48 } from "react/jsx-runtime";
+import { Fragment as Fragment11, jsx as jsx86, jsxs as jsxs47 } from "react/jsx-runtime";
 var Section = ({ heading, children, ...props }) => {
   const { id } = useExcalidrawContainer();
-  const header = /* @__PURE__ */ jsx87("h2", { className: "visually-hidden", id: `${id}-${heading}-title`, children: t(`headings.${heading}`) });
-  return /* @__PURE__ */ jsx87("section", { ...props, "aria-labelledby": `${id}-${heading}-title`, children: typeof children === "function" ? children(header) : /* @__PURE__ */ jsxs48(Fragment11, { children: [
+  const header = /* @__PURE__ */ jsx86("h2", { className: "visually-hidden", id: `${id}-${heading}-title`, children: t(`headings.${heading}`) });
+  return /* @__PURE__ */ jsx86("section", { ...props, "aria-labelledby": `${id}-${heading}-title`, children: typeof children === "function" ? children(header) : /* @__PURE__ */ jsxs47(Fragment11, { children: [
     header,
     children
   ] }) });
 };
 
 // components/MobileMenu.tsx
-import { Fragment as Fragment12, jsx as jsx88, jsxs as jsxs49 } from "react/jsx-runtime";
+import { Fragment as Fragment12, jsx as jsx87, jsxs as jsxs48 } from "react/jsx-runtime";
 var MobileMenu = ({
   appState,
   elements,
@@ -24597,55 +24560,14 @@ var MobileMenu = ({
     DefaultSidebarTriggerTunnel
   } = useTunnels();
   const renderToolbar = () => {
-    return /* @__PURE__ */ jsxs49(FixedSideContainer, { side: "top", className: "App-top-bar", children: [
-      renderWelcomeScreen && /* @__PURE__ */ jsx88(WelcomeScreenCenterTunnel.Out, {}),
-      /* @__PURE__ */ jsx88(Section, { heading: "shapes", children: (heading) => /* @__PURE__ */ jsx88(Stack_default.Col, { gap: 4, align: "center", children: /* @__PURE__ */ jsxs49(Stack_default.Row, { gap: 1, className: "App-toolbar-container", children: [
+    return /* @__PURE__ */ jsxs48(FixedSideContainer, { side: "top", className: "App-top-bar", children: [
+      renderWelcomeScreen && /* @__PURE__ */ jsx87(WelcomeScreenCenterTunnel.Out, {}),
+      /* @__PURE__ */ jsx87(Section, { heading: "shapes", children: (heading) => /* @__PURE__ */ jsx87(Stack_default.Col, { gap: 4, align: "center", children: /* @__PURE__ */ jsxs48(Stack_default.Row, { gap: 1, className: "App-toolbar-container", children: [
         renderBreadcrumbs && renderBreadcrumbs(true, appState),
-        !device.editor.isMobile && /* @__PURE__ */ jsxs49(
-          Island,
-          {
-            padding: 1,
-            className: "App-toolbar App-toolbar--mobile",
-            children: [
-              heading,
-              /* @__PURE__ */ jsxs49(Stack_default.Row, { gap: 1, children: [
-                /* @__PURE__ */ jsx88(
-                  ShapesSwitcher,
-                  {
-                    appState,
-                    activeTool: appState.activeTool,
-                    UIOptions,
-                    app
-                  }
-                ),
-                topIslandCustomElements && topIslandCustomElements(true, appState)
-              ] })
-            ]
-          }
-        ),
         renderTopRightUI && renderTopRightUI(true, appState),
-        /* @__PURE__ */ jsxs49("div", { className: "mobile-misc-tools-container", children: [
-          !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && /* @__PURE__ */ jsx88(DefaultSidebarTriggerTunnel.Out, {}),
-          /* @__PURE__ */ jsx88(
-            PenModeButton,
-            {
-              checked: appState.penMode,
-              onChange: () => onPenModeToggle(null),
-              title: t("toolBar.penMode"),
-              isMobile: true,
-              penDetected: appState.penDetected
-            }
-          ),
-          /* @__PURE__ */ jsx88(
-            LockButton,
-            {
-              checked: appState.activeTool.locked,
-              onChange: onLockToggle,
-              title: t("toolBar.lock"),
-              isMobile: true
-            }
-          ),
-          /* @__PURE__ */ jsx88(
+        /* @__PURE__ */ jsxs48("div", { className: "mobile-misc-tools-container", children: [
+          !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && /* @__PURE__ */ jsx87(DefaultSidebarTriggerTunnel.Out, {}),
+          /* @__PURE__ */ jsx87(
             HandButton,
             {
               checked: isHandToolActive(appState),
@@ -24656,7 +24578,7 @@ var MobileMenu = ({
           )
         ] })
       ] }) }) }),
-      /* @__PURE__ */ jsx88(
+      /* @__PURE__ */ jsx87(
         HintViewer,
         {
           appState,
@@ -24669,25 +24591,25 @@ var MobileMenu = ({
   };
   const renderAppToolbar = () => {
     if (appState.viewModeEnabled || appState.openDialog?.name === "elementLinkSelector") {
-      return /* @__PURE__ */ jsx88("div", { className: "App-toolbar-content", children: /* @__PURE__ */ jsx88(MainMenuTunnel.Out, {}) });
+      return /* @__PURE__ */ jsx87("div", { className: "App-toolbar-content", children: /* @__PURE__ */ jsx87(MainMenuTunnel.Out, {}) });
     }
-    return /* @__PURE__ */ jsxs49("div", { className: "App-toolbar-content", children: [
-      /* @__PURE__ */ jsx88(MainMenuTunnel.Out, {}),
+    return /* @__PURE__ */ jsxs48("div", { className: "App-toolbar-content", children: [
+      /* @__PURE__ */ jsx87(MainMenuTunnel.Out, {}),
       actionManager.renderAction("toggleEditMenu"),
       actionManager.renderAction(
         appState.multiElement ? "finalize" : "duplicateSelection"
       ),
       actionManager.renderAction("deleteSelectedElements"),
-      /* @__PURE__ */ jsxs49("div", { children: [
+      /* @__PURE__ */ jsxs48("div", { children: [
         actionManager.renderAction("undo"),
         actionManager.renderAction("redo")
       ] })
     ] });
   };
-  return /* @__PURE__ */ jsxs49(Fragment12, { children: [
+  return /* @__PURE__ */ jsxs48(Fragment12, { children: [
     renderSidebars(),
     !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && renderToolbar(),
-    /* @__PURE__ */ jsx88(
+    /* @__PURE__ */ jsx87(
       "div",
       {
         className: "App-bottom-bar",
@@ -24696,8 +24618,8 @@ var MobileMenu = ({
           marginLeft: SCROLLBAR_WIDTH + SCROLLBAR_MARGIN * 2,
           marginRight: SCROLLBAR_WIDTH + SCROLLBAR_MARGIN * 2
         },
-        children: /* @__PURE__ */ jsxs49(Island, { padding: 0, children: [
-          appState.openMenu === "shape" && !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && showSelectedShapeActions(appState, elements) ? /* @__PURE__ */ jsx88(Section, { className: "App-mobile-menu", heading: "selectedShapeActions", children: /* @__PURE__ */ jsx88(
+        children: /* @__PURE__ */ jsxs48(Island, { padding: 0, children: [
+          appState.openMenu === "shape" && !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && showSelectedShapeActions(appState, elements) ? /* @__PURE__ */ jsx87(Section, { className: "App-mobile-menu", heading: "selectedShapeActions", children: /* @__PURE__ */ jsx87(
             SelectedShapeActions,
             {
               appState,
@@ -24706,9 +24628,9 @@ var MobileMenu = ({
               app
             }
           ) }) : null,
-          /* @__PURE__ */ jsxs49("footer", { className: "App-toolbar", children: [
+          /* @__PURE__ */ jsxs48("footer", { className: "App-toolbar", children: [
             renderAppToolbar(),
-            appState.scrolledOutside && !appState.openMenu && !appState.openSidebar && /* @__PURE__ */ jsx88(
+            appState.scrolledOutside && !appState.openMenu && !appState.openSidebar && /* @__PURE__ */ jsx87(
               "button",
               {
                 type: "button",
@@ -24731,7 +24653,7 @@ var MobileMenu = ({
 // components/PasteChartDialog.tsx
 import oc3 from "open-color";
 import React30, { useLayoutEffect as useLayoutEffect5, useRef as useRef24, useState as useState24 } from "react";
-import { jsx as jsx89, jsxs as jsxs50 } from "react/jsx-runtime";
+import { jsx as jsx88, jsxs as jsxs49 } from "react/jsx-runtime";
 var ChartPreviewBtn = (props) => {
   const previewRef = useRef24(null);
   const [chartElements, setChartElements] = useState24(
@@ -24774,7 +24696,7 @@ var ChartPreviewBtn = (props) => {
       previewNode.replaceChildren();
     };
   }, [props.spreadsheet, props.chartType, props.selected]);
-  return /* @__PURE__ */ jsx89(
+  return /* @__PURE__ */ jsx88(
     "button",
     {
       type: "button",
@@ -24784,7 +24706,7 @@ var ChartPreviewBtn = (props) => {
           props.onClick(props.chartType, chartElements);
         }
       },
-      children: /* @__PURE__ */ jsx89("div", { ref: previewRef })
+      children: /* @__PURE__ */ jsx88("div", { ref: previewRef })
     }
   );
 };
@@ -24810,7 +24732,7 @@ var PasteChartDialog = ({
       }
     });
   };
-  return /* @__PURE__ */ jsx89(
+  return /* @__PURE__ */ jsx88(
     Dialog,
     {
       size: "small",
@@ -24818,8 +24740,8 @@ var PasteChartDialog = ({
       title: t("labels.pasteCharts"),
       className: "PasteChartDialog",
       autofocus: false,
-      children: /* @__PURE__ */ jsxs50("div", { className: "container", children: [
-        /* @__PURE__ */ jsx89(
+      children: /* @__PURE__ */ jsxs49("div", { className: "container", children: [
+        /* @__PURE__ */ jsx88(
           ChartPreviewBtn,
           {
             chartType: "bar",
@@ -24828,7 +24750,7 @@ var PasteChartDialog = ({
             onClick: handleChartClick
           }
         ),
-        /* @__PURE__ */ jsx89(
+        /* @__PURE__ */ jsx88(
           ChartPreviewBtn,
           {
             chartType: "line",
@@ -24844,16 +24766,16 @@ var PasteChartDialog = ({
 
 // components/UserList.tsx
 import * as Popover7 from "@radix-ui/react-popover";
-import clsx39 from "clsx";
+import clsx38 from "clsx";
 import React31, { useLayoutEffect as useLayoutEffect6 } from "react";
-import { Fragment as Fragment13, jsx as jsx90, jsxs as jsxs51 } from "react/jsx-runtime";
+import { Fragment as Fragment13, jsx as jsx89, jsxs as jsxs50 } from "react/jsx-runtime";
 var DEFAULT_MAX_AVATARS = 4;
 var SHOW_COLLABORATORS_FILTER_AT = 8;
 var ConditionalTooltipWrapper = ({
   shouldWrap,
   children,
   username
-}) => shouldWrap ? /* @__PURE__ */ jsx90(Tooltip, { label: username || "Unknown user", children }) : /* @__PURE__ */ jsx90(Fragment13, { children });
+}) => shouldWrap ? /* @__PURE__ */ jsx89(Tooltip, { label: username || "Unknown user", children }) : /* @__PURE__ */ jsx89(Fragment13, { children });
 var renderCollaborator = ({
   actionManager,
   collaborator,
@@ -24869,7 +24791,7 @@ var renderCollaborator = ({
     isBeingFollowed
   };
   const avatarJSX = actionManager.renderAction("goToCollaborator", data);
-  return /* @__PURE__ */ jsx90(
+  return /* @__PURE__ */ jsx89(
     ConditionalTooltipWrapper,
     {
       username: collaborator.username,
@@ -24944,7 +24866,7 @@ var UserList = React31.memo(
         isBeingFollowed: collaborator.socketId === userToFollow
       })
     );
-    return mobile ? /* @__PURE__ */ jsx90("div", { className: clsx39("UserList UserList_mobile", className), children: uniqueCollaboratorsArray.map(
+    return mobile ? /* @__PURE__ */ jsx89("div", { className: clsx38("UserList UserList_mobile", className), children: uniqueCollaboratorsArray.map(
       (collaborator) => renderCollaborator({
         actionManager,
         collaborator,
@@ -24952,19 +24874,19 @@ var UserList = React31.memo(
         shouldWrapWithTooltip: true,
         isBeingFollowed: collaborator.socketId === userToFollow
       })
-    ) }) : /* @__PURE__ */ jsx90("div", { className: "UserList__wrapper", ref: userListWrapper, children: /* @__PURE__ */ jsxs51(
+    ) }) : /* @__PURE__ */ jsx89("div", { className: "UserList__wrapper", ref: userListWrapper, children: /* @__PURE__ */ jsxs50(
       "div",
       {
-        className: clsx39("UserList", className),
+        className: clsx38("UserList", className),
         style: { [`--max-avatars`]: maxAvatars },
         children: [
           firstNAvatarsJSX,
-          uniqueCollaboratorsArray.length > maxAvatars - 1 && /* @__PURE__ */ jsxs51(Popover7.Root, { children: [
-            /* @__PURE__ */ jsxs51(Popover7.Trigger, { className: "UserList__more", children: [
+          uniqueCollaboratorsArray.length > maxAvatars - 1 && /* @__PURE__ */ jsxs50(Popover7.Root, { children: [
+            /* @__PURE__ */ jsxs50(Popover7.Trigger, { className: "UserList__more", children: [
               "+",
               uniqueCollaboratorsArray.length - maxAvatars + 1
             ] }),
-            /* @__PURE__ */ jsx90(
+            /* @__PURE__ */ jsx89(
               Popover7.Content,
               {
                 style: {
@@ -24974,21 +24896,21 @@ var UserList = React31.memo(
                 },
                 align: "end",
                 sideOffset: 10,
-                children: /* @__PURE__ */ jsxs51(Island, { padding: 2, children: [
-                  uniqueCollaboratorsArray.length >= SHOW_COLLABORATORS_FILTER_AT && /* @__PURE__ */ jsx90(
+                children: /* @__PURE__ */ jsxs50(Island, { padding: 2, children: [
+                  uniqueCollaboratorsArray.length >= SHOW_COLLABORATORS_FILTER_AT && /* @__PURE__ */ jsx89(
                     QuickSearch,
                     {
                       placeholder: t("quickSearch.placeholder"),
                       onChange: setSearchTerm
                     }
                   ),
-                  /* @__PURE__ */ jsx90(
+                  /* @__PURE__ */ jsx89(
                     ScrollableList,
                     {
                       className: "dropdown-menu UserList__collaborators",
                       placeholder: t("userList.empty"),
                       children: filteredCollaborators.length > 0 ? [
-                        /* @__PURE__ */ jsx90("div", { className: "hint", children: t("userList.hint.text") }),
+                        /* @__PURE__ */ jsx89("div", { className: "hint", children: t("userList.hint.text") }),
                         filteredCollaborators.map(
                           (collaborator) => renderCollaborator({
                             actionManager,
@@ -25001,7 +24923,7 @@ var UserList = React31.memo(
                       ] : []
                     }
                   ),
-                  /* @__PURE__ */ jsx90(
+                  /* @__PURE__ */ jsx89(
                     Popover7.Arrow,
                     {
                       width: 20,
@@ -25040,6 +24962,43 @@ var UserList = React31.memo(
     return true;
   }
 );
+
+// components/PenModeButton.tsx
+import clsx39 from "clsx";
+import { jsx as jsx90, jsxs as jsxs51 } from "react/jsx-runtime";
+var DEFAULT_SIZE2 = "medium";
+var PenModeButton = (props) => {
+  if (!props.penDetected) {
+    return null;
+  }
+  return /* @__PURE__ */ jsxs51(
+    "label",
+    {
+      className: clsx39(
+        "ToolIcon ToolIcon__penMode",
+        `ToolIcon_size_${DEFAULT_SIZE2}`,
+        {
+          "is-mobile": props.isMobile
+        }
+      ),
+      title: `${props.title}`,
+      children: [
+        /* @__PURE__ */ jsx90(
+          "input",
+          {
+            className: "ToolIcon_type_checkbox",
+            type: "checkbox",
+            name: props.name,
+            onChange: props.onChange,
+            checked: props.checked,
+            "aria-label": props.title
+          }
+        ),
+        /* @__PURE__ */ jsx90("div", { className: "ToolIcon__icon", children: PenModeIcon })
+      ]
+    }
+  );
+};
 
 // components/footer/Footer.tsx
 import clsx40 from "clsx";
@@ -31018,8 +30977,7 @@ var LayerUI = ({
             );
           }
         },
-        tab: DEFAULT_SIDEBAR.defaultTab,
-        children: t("toolBar.library")
+        tab: DEFAULT_SIDEBAR.defaultTab
       }
     ),
     /* @__PURE__ */ jsx140(DefaultOverwriteConfirmDialog, {}),
