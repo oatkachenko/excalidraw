@@ -87,6 +87,8 @@ interface LayerUIProps {
   showExitZenModeBtn: boolean;
   langCode: Language["code"];
   renderTopRightUI?: ExcalidrawProps["renderTopRightUI"];
+  renderBreadcrumbs?: ExcalidrawProps["renderBreadcrumbs"];
+  topIslandCustomElements?: ExcalidrawProps["topIslandCustomElements"];
   renderCustomStats?: ExcalidrawProps["renderCustomStats"];
   UIOptions: AppProps["UIOptions"];
   onExportImage: AppClassProperties["onExportImage"];
@@ -145,6 +147,8 @@ const LayerUI = ({
   onPenModeToggle,
   showExitZenModeBtn,
   renderTopRightUI,
+  renderBreadcrumbs,
+  topIslandCustomElements,
   renderCustomStats,
   UIOptions,
   onExportImage,
@@ -251,7 +255,10 @@ const LayerUI = ({
       <FixedSideContainer side="top">
         <div className="App-menu App-menu_top">
           <Stack.Col gap={6} className={clsx("App-menu_top__left")}>
-            {renderCanvasActions()}
+            <Stack.Row gap={1}>
+              {renderCanvasActions()}
+              {renderBreadcrumbs?.(device.editor.isMobile, appState)}
+            </Stack.Row>
             {shouldRenderSelectedShapeActions && renderSelectedShapeActions()}
           </Stack.Col>
           {!appState.viewModeEnabled &&
@@ -269,52 +276,37 @@ const LayerUI = ({
                           "zen-mode": appState.zenModeEnabled,
                         })}
                       >
-                        {!device.editor.isMobile && (
-                          <Island
-                            padding={1}
-                            className={clsx("App-toolbar", {
-                              "zen-mode": appState.zenModeEnabled,
-                            })}
-                          >
-                            <HintViewer
+                        <Island
+                          padding={1}
+                          className={clsx("App-toolbar", {
+                            "zen-mode": appState.zenModeEnabled,
+                          })}
+                        >
+                          <HintViewer
+                            appState={appState}
+                            isMobile={device.editor.isMobile}
+                            device={device}
+                            app={app}
+                          />
+                          {heading}
+                          <Stack.Row gap={1}>
+                            <PenModeButton
+                              zenModeEnabled={appState.zenModeEnabled}
+                              checked={appState.penMode}
+                              onChange={() => onPenModeToggle(null)}
+                              title={t("toolBar.penMode")}
+                              penDetected={appState.penDetected}
+                            />
+                            {appState.penDetected && (<div className="App-toolbar__divider" />)}
+                            <ShapesSwitcher
                               appState={appState}
-                              isMobile={device.editor.isMobile}
-                              device={device}
+                              activeTool={appState.activeTool}
+                              UIOptions={UIOptions}
                               app={app}
                             />
-                            {heading}
-                            <Stack.Row gap={1}>
-                              <PenModeButton
-                                zenModeEnabled={appState.zenModeEnabled}
-                                checked={appState.penMode}
-                                onChange={() => onPenModeToggle(null)}
-                                title={t("toolBar.penMode")}
-                                penDetected={appState.penDetected}
-                              />
-                              <LockButton
-                                checked={appState.activeTool.locked}
-                                onChange={onLockToggle}
-                                title={t("toolBar.lock")}
-                              />
-
-                              <div className="App-toolbar__divider" />
-
-                              <HandButton
-                                checked={isHandToolActive(appState)}
-                                onChange={() => onHandToolToggle()}
-                                title={t("toolBar.hand")}
-                                isMobile
-                              />
-
-                              <ShapesSwitcher
-                                appState={appState}
-                                activeTool={appState.activeTool}
-                                UIOptions={UIOptions}
-                                app={app}
-                              />
-                            </Stack.Row>
-                          </Island>
-                        )}
+                            {topIslandCustomElements?.(device.editor.isMobile, appState)}
+                          </Stack.Row>
+                        </Island>
                         {isCollaborating && (
                           <Island
                             style={{
@@ -356,13 +348,31 @@ const LayerUI = ({
               />
             )}
             {renderTopRightUI?.(device.editor.isMobile, appState)}
-            {!appState.viewModeEnabled &&
-              appState.openDialog?.name !== "elementLinkSelector" &&
-              // hide button when sidebar docked
-              (!isSidebarDocked ||
-                appState.openSidebar?.name !== DEFAULT_SIDEBAR.name) && (
-                <tunnels.DefaultSidebarTriggerTunnel.Out />
-              )}
+            <div className="mobile-misc-tools-container">
+              {!appState.viewModeEnabled &&
+                appState.openDialog?.name !== "elementLinkSelector" && (
+                  <tunnels.DefaultSidebarTriggerTunnel.Out />
+                )}
+              <PenModeButton
+                checked={appState.penMode}
+                onChange={() => onPenModeToggle(null)}
+                title={t("toolBar.penMode")}
+                isMobile
+                penDetected={appState.penDetected}
+              />
+              <LockButton
+                checked={appState.activeTool.locked}
+                onChange={onLockToggle}
+                title={t("toolBar.lock")}
+                isMobile
+              />
+              <HandButton
+                checked={isHandToolActive(appState)}
+                onChange={() => onHandToolToggle()}
+                title={t("toolBar.hand")}
+                isMobile
+              />
+            </div>
             {shouldShowStats && (
               <Stats
                 app={app}
@@ -528,6 +538,8 @@ const LayerUI = ({
           onHandToolToggle={onHandToolToggle}
           onPenModeToggle={onPenModeToggle}
           renderTopRightUI={renderTopRightUI}
+          renderBreadcrumbs={renderBreadcrumbs}
+          topIslandCustomElements={topIslandCustomElements}
           renderCustomStats={renderCustomStats}
           renderSidebars={renderSidebars}
           device={device}
