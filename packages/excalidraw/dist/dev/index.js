@@ -453,10 +453,10 @@ import {
   viewportCoordsToSceneCoords,
   wrapEvent,
   wrapText
-} from "./chunk-YMWMBXEX.js";
+} from "./chunk-TTDYUUQB.js";
 import {
   define_import_meta_env_default
-} from "./chunk-JEABQ3IW.js";
+} from "./chunk-4ZCNZOMT.js";
 import {
   en_default
 } from "./chunk-LMHBUWQS.js";
@@ -12729,7 +12729,7 @@ var exportCanvas = async (type, elements, appState, files, {
     let blob = canvasToBlob(tempCanvas);
     if (appState.exportEmbedScene) {
       blob = blob.then(
-        (blob2) => import("./data/image-AX2UXN5G.js").then(
+        (blob2) => import("./data/image-2P7YDXFI.js").then(
           ({ encodePngMetadata: encodePngMetadata2 }) => encodePngMetadata2({
             blob: blob2,
             metadata: serializeAsJSON(elements, appState, files, "local")
