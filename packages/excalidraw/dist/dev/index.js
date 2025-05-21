@@ -453,10 +453,10 @@ import {
   viewportCoordsToSceneCoords,
   wrapEvent,
   wrapText
-} from "./chunk-TTDYUUQB.js";
+} from "./chunk-XKEAI6EV.js";
 import {
   define_import_meta_env_default
-} from "./chunk-4ZCNZOMT.js";
+} from "./chunk-A6SOT5M3.js";
 import {
   en_default
 } from "./chunk-LMHBUWQS.js";
@@ -12729,7 +12729,7 @@ var exportCanvas = async (type, elements, appState, files, {
     let blob = canvasToBlob(tempCanvas);
     if (appState.exportEmbedScene) {
       blob = blob.then(
-        (blob2) => import("./data/image-2P7YDXFI.js").then(
+        (blob2) => import("./data/image-DFJF2L6A.js").then(
           ({ encodePngMetadata: encodePngMetadata2 }) => encodePngMetadata2({
             blob: blob2,
             metadata: serializeAsJSON(elements, appState, files, "local")
@@ -24384,30 +24384,8 @@ var FixedSideContainer = ({
   }
 );
 
-// components/HandButton.tsx
-import clsx37 from "clsx";
-import { jsx as jsx84 } from "react/jsx-runtime";
-var HandButton = (props) => {
-  return /* @__PURE__ */ jsx84(
-    ToolButton,
-    {
-      className: clsx37("Shape", { fillable: false }),
-      type: "radio",
-      icon: handIcon,
-      name: "editor-current-shape",
-      checked: props.checked,
-      title: `${props.title} \u2014 H`,
-      keyBindingLabel: !props.isMobile ? KEYS.H.toLocaleUpperCase() : void 0,
-      "aria-label": `${props.title} \u2014 H`,
-      "aria-keyshortcuts": KEYS.H,
-      "data-testid": `toolbar-hand`,
-      onChange: () => props.onChange?.()
-    }
-  );
-};
-
 // components/HintViewer.tsx
-import { jsx as jsx85 } from "react/jsx-runtime";
+import { jsx as jsx84 } from "react/jsx-runtime";
 var getHints = ({
   appState,
   isMobile,
@@ -24520,22 +24498,22 @@ var HintViewer = ({
   const hint = Array.isArray(hints) ? hints.map((hint2) => {
     return getShortcutKey(hint2).replace(/\. ?$/, "");
   }).join(". ") : getShortcutKey(hints);
-  return /* @__PURE__ */ jsx85("div", { className: "HintViewer", children: /* @__PURE__ */ jsx85("span", { children: hint }) });
+  return /* @__PURE__ */ jsx84("div", { className: "HintViewer", children: /* @__PURE__ */ jsx84("span", { children: hint }) });
 };
 
 // components/Section.tsx
-import { Fragment as Fragment11, jsx as jsx86, jsxs as jsxs47 } from "react/jsx-runtime";
+import { Fragment as Fragment11, jsx as jsx85, jsxs as jsxs47 } from "react/jsx-runtime";
 var Section = ({ heading, children, ...props }) => {
   const { id } = useExcalidrawContainer();
-  const header = /* @__PURE__ */ jsx86("h2", { className: "visually-hidden", id: `${id}-${heading}-title`, children: t(`headings.${heading}`) });
-  return /* @__PURE__ */ jsx86("section", { ...props, "aria-labelledby": `${id}-${heading}-title`, children: typeof children === "function" ? children(header) : /* @__PURE__ */ jsxs47(Fragment11, { children: [
+  const header = /* @__PURE__ */ jsx85("h2", { className: "visually-hidden", id: `${id}-${heading}-title`, children: t(`headings.${heading}`) });
+  return /* @__PURE__ */ jsx85("section", { ...props, "aria-labelledby": `${id}-${heading}-title`, children: typeof children === "function" ? children(header) : /* @__PURE__ */ jsxs47(Fragment11, { children: [
     header,
     children
   ] }) });
 };
 
 // components/MobileMenu.tsx
-import { Fragment as Fragment12, jsx as jsx87, jsxs as jsxs48 } from "react/jsx-runtime";
+import { Fragment as Fragment12, jsx as jsx86, jsxs as jsxs48 } from "react/jsx-runtime";
 var MobileMenu = ({
   appState,
   elements,
@@ -24561,24 +24539,9 @@ var MobileMenu = ({
   } = useTunnels();
   const renderToolbar = () => {
     return /* @__PURE__ */ jsxs48(FixedSideContainer, { side: "top", className: "App-top-bar", children: [
-      renderWelcomeScreen && /* @__PURE__ */ jsx87(WelcomeScreenCenterTunnel.Out, {}),
-      /* @__PURE__ */ jsx87(Section, { heading: "shapes", children: (heading) => /* @__PURE__ */ jsx87(Stack_default.Col, { gap: 4, align: "center", children: /* @__PURE__ */ jsxs48(Stack_default.Row, { gap: 1, className: "App-toolbar-container", children: [
-        renderBreadcrumbs && renderBreadcrumbs(true, appState),
-        renderTopRightUI && renderTopRightUI(true, appState),
-        /* @__PURE__ */ jsxs48("div", { className: "mobile-misc-tools-container", children: [
-          !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && /* @__PURE__ */ jsx87(DefaultSidebarTriggerTunnel.Out, {}),
-          /* @__PURE__ */ jsx87(
-            HandButton,
-            {
-              checked: isHandToolActive(appState),
-              onChange: () => onHandToolToggle(),
-              title: t("toolBar.hand"),
-              isMobile: true
-            }
-          )
-        ] })
-      ] }) }) }),
-      /* @__PURE__ */ jsx87(
+      renderWelcomeScreen && /* @__PURE__ */ jsx86(WelcomeScreenCenterTunnel.Out, {}),
+      /* @__PURE__ */ jsx86(Section, { heading: "shapes", children: (heading) => /* @__PURE__ */ jsx86(Stack_default.Col, { gap: 4, align: "center", children: /* @__PURE__ */ jsx86(Stack_default.Row, { gap: 1, className: "App-toolbar-container", children: renderBreadcrumbs && renderBreadcrumbs(true, appState) }) }) }),
+      /* @__PURE__ */ jsx86(
         HintViewer,
         {
           appState,
@@ -24591,10 +24554,10 @@ var MobileMenu = ({
   };
   const renderAppToolbar = () => {
     if (appState.viewModeEnabled || appState.openDialog?.name === "elementLinkSelector") {
-      return /* @__PURE__ */ jsx87("div", { className: "App-toolbar-content", children: /* @__PURE__ */ jsx87(MainMenuTunnel.Out, {}) });
+      return /* @__PURE__ */ jsx86("div", { className: "App-toolbar-content", children: /* @__PURE__ */ jsx86(MainMenuTunnel.Out, {}) });
     }
     return /* @__PURE__ */ jsxs48("div", { className: "App-toolbar-content", children: [
-      /* @__PURE__ */ jsx87(MainMenuTunnel.Out, {}),
+      /* @__PURE__ */ jsx86(MainMenuTunnel.Out, {}),
       actionManager.renderAction("toggleEditMenu"),
       actionManager.renderAction(
         appState.multiElement ? "finalize" : "duplicateSelection"
@@ -24609,7 +24572,7 @@ var MobileMenu = ({
   return /* @__PURE__ */ jsxs48(Fragment12, { children: [
     renderSidebars(),
     !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && renderToolbar(),
-    /* @__PURE__ */ jsx87(
+    /* @__PURE__ */ jsx86(
       "div",
       {
         className: "App-bottom-bar",
@@ -24619,7 +24582,7 @@ var MobileMenu = ({
           marginRight: SCROLLBAR_WIDTH + SCROLLBAR_MARGIN * 2
         },
         children: /* @__PURE__ */ jsxs48(Island, { padding: 0, children: [
-          appState.openMenu === "shape" && !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && showSelectedShapeActions(appState, elements) ? /* @__PURE__ */ jsx87(Section, { className: "App-mobile-menu", heading: "selectedShapeActions", children: /* @__PURE__ */ jsx87(
+          appState.openMenu === "shape" && !appState.viewModeEnabled && appState.openDialog?.name !== "elementLinkSelector" && showSelectedShapeActions(appState, elements) ? /* @__PURE__ */ jsx86(Section, { className: "App-mobile-menu", heading: "selectedShapeActions", children: /* @__PURE__ */ jsx86(
             SelectedShapeActions,
             {
               appState,
@@ -24630,7 +24593,7 @@ var MobileMenu = ({
           ) }) : null,
           /* @__PURE__ */ jsxs48("footer", { className: "App-toolbar", children: [
             renderAppToolbar(),
-            appState.scrolledOutside && !appState.openMenu && !appState.openSidebar && /* @__PURE__ */ jsx87(
+            appState.scrolledOutside && !appState.openMenu && !appState.openSidebar && /* @__PURE__ */ jsx86(
               "button",
               {
                 type: "button",
@@ -24653,7 +24616,7 @@ var MobileMenu = ({
 // components/PasteChartDialog.tsx
 import oc3 from "open-color";
 import React30, { useLayoutEffect as useLayoutEffect5, useRef as useRef24, useState as useState24 } from "react";
-import { jsx as jsx88, jsxs as jsxs49 } from "react/jsx-runtime";
+import { jsx as jsx87, jsxs as jsxs49 } from "react/jsx-runtime";
 var ChartPreviewBtn = (props) => {
   const previewRef = useRef24(null);
   const [chartElements, setChartElements] = useState24(
@@ -24696,7 +24659,7 @@ var ChartPreviewBtn = (props) => {
       previewNode.replaceChildren();
     };
   }, [props.spreadsheet, props.chartType, props.selected]);
-  return /* @__PURE__ */ jsx88(
+  return /* @__PURE__ */ jsx87(
     "button",
     {
       type: "button",
@@ -24706,7 +24669,7 @@ var ChartPreviewBtn = (props) => {
           props.onClick(props.chartType, chartElements);
         }
       },
-      children: /* @__PURE__ */ jsx88("div", { ref: previewRef })
+      children: /* @__PURE__ */ jsx87("div", { ref: previewRef })
     }
   );
 };
@@ -24732,7 +24695,7 @@ var PasteChartDialog = ({
       }
     });
   };
-  return /* @__PURE__ */ jsx88(
+  return /* @__PURE__ */ jsx87(
     Dialog,
     {
       size: "small",
@@ -24741,7 +24704,7 @@ var PasteChartDialog = ({
       className: "PasteChartDialog",
       autofocus: false,
       children: /* @__PURE__ */ jsxs49("div", { className: "container", children: [
-        /* @__PURE__ */ jsx88(
+        /* @__PURE__ */ jsx87(
           ChartPreviewBtn,
           {
             chartType: "bar",
@@ -24750,7 +24713,7 @@ var PasteChartDialog = ({
             onClick: handleChartClick
           }
         ),
-        /* @__PURE__ */ jsx88(
+        /* @__PURE__ */ jsx87(
           ChartPreviewBtn,
           {
             chartType: "line",
@@ -24766,16 +24729,16 @@ var PasteChartDialog = ({
 
 // components/UserList.tsx
 import * as Popover7 from "@radix-ui/react-popover";
-import clsx38 from "clsx";
+import clsx37 from "clsx";
 import React31, { useLayoutEffect as useLayoutEffect6 } from "react";
-import { Fragment as Fragment13, jsx as jsx89, jsxs as jsxs50 } from "react/jsx-runtime";
+import { Fragment as Fragment13, jsx as jsx88, jsxs as jsxs50 } from "react/jsx-runtime";
 var DEFAULT_MAX_AVATARS = 4;
 var SHOW_COLLABORATORS_FILTER_AT = 8;
 var ConditionalTooltipWrapper = ({
   shouldWrap,
   children,
   username
-}) => shouldWrap ? /* @__PURE__ */ jsx89(Tooltip, { label: username || "Unknown user", children }) : /* @__PURE__ */ jsx89(Fragment13, { children });
+}) => shouldWrap ? /* @__PURE__ */ jsx88(Tooltip, { label: username || "Unknown user", children }) : /* @__PURE__ */ jsx88(Fragment13, { children });
 var renderCollaborator = ({
   actionManager,
   collaborator,
@@ -24791,7 +24754,7 @@ var renderCollaborator = ({
     isBeingFollowed
   };
   const avatarJSX = actionManager.renderAction("goToCollaborator", data);
-  return /* @__PURE__ */ jsx89(
+  return /* @__PURE__ */ jsx88(
     ConditionalTooltipWrapper,
     {
       username: collaborator.username,
@@ -24866,7 +24829,7 @@ var UserList = React31.memo(
         isBeingFollowed: collaborator.socketId === userToFollow
       })
     );
-    return mobile ? /* @__PURE__ */ jsx89("div", { className: clsx38("UserList UserList_mobile", className), children: uniqueCollaboratorsArray.map(
+    return mobile ? /* @__PURE__ */ jsx88("div", { className: clsx37("UserList UserList_mobile", className), children: uniqueCollaboratorsArray.map(
       (collaborator) => renderCollaborator({
         actionManager,
         collaborator,
@@ -24874,10 +24837,10 @@ var UserList = React31.memo(
         shouldWrapWithTooltip: true,
         isBeingFollowed: collaborator.socketId === userToFollow
       })
-    ) }) : /* @__PURE__ */ jsx89("div", { className: "UserList__wrapper", ref: userListWrapper, children: /* @__PURE__ */ jsxs50(
+    ) }) : /* @__PURE__ */ jsx88("div", { className: "UserList__wrapper", ref: userListWrapper, children: /* @__PURE__ */ jsxs50(
       "div",
       {
-        className: clsx38("UserList", className),
+        className: clsx37("UserList", className),
         style: { [`--max-avatars`]: maxAvatars },
         children: [
           firstNAvatarsJSX,
@@ -24886,7 +24849,7 @@ var UserList = React31.memo(
               "+",
               uniqueCollaboratorsArray.length - maxAvatars + 1
             ] }),
-            /* @__PURE__ */ jsx89(
+            /* @__PURE__ */ jsx88(
               Popover7.Content,
               {
                 style: {
@@ -24897,20 +24860,20 @@ var UserList = React31.memo(
                 align: "end",
                 sideOffset: 10,
                 children: /* @__PURE__ */ jsxs50(Island, { padding: 2, children: [
-                  uniqueCollaboratorsArray.length >= SHOW_COLLABORATORS_FILTER_AT && /* @__PURE__ */ jsx89(
+                  uniqueCollaboratorsArray.length >= SHOW_COLLABORATORS_FILTER_AT && /* @__PURE__ */ jsx88(
                     QuickSearch,
                     {
                       placeholder: t("quickSearch.placeholder"),
                       onChange: setSearchTerm
                     }
                   ),
-                  /* @__PURE__ */ jsx89(
+                  /* @__PURE__ */ jsx88(
                     ScrollableList,
                     {
                       className: "dropdown-menu UserList__collaborators",
                       placeholder: t("userList.empty"),
                       children: filteredCollaborators.length > 0 ? [
-                        /* @__PURE__ */ jsx89("div", { className: "hint", children: t("userList.hint.text") }),
+                        /* @__PURE__ */ jsx88("div", { className: "hint", children: t("userList.hint.text") }),
                         filteredCollaborators.map(
                           (collaborator) => renderCollaborator({
                             actionManager,
@@ -24923,7 +24886,7 @@ var UserList = React31.memo(
                       ] : []
                     }
                   ),
-                  /* @__PURE__ */ jsx89(
+                  /* @__PURE__ */ jsx88(
                     Popover7.Arrow,
                     {
                       width: 20,
@@ -24964,8 +24927,8 @@ var UserList = React31.memo(
 );
 
 // components/PenModeButton.tsx
-import clsx39 from "clsx";
-import { jsx as jsx90, jsxs as jsxs51 } from "react/jsx-runtime";
+import clsx38 from "clsx";
+import { jsx as jsx89, jsxs as jsxs51 } from "react/jsx-runtime";
 var DEFAULT_SIZE2 = "medium";
 var PenModeButton = (props) => {
   if (!props.penDetected) {
@@ -24974,7 +24937,7 @@ var PenModeButton = (props) => {
   return /* @__PURE__ */ jsxs51(
     "label",
     {
-      className: clsx39(
+      className: clsx38(
         "ToolIcon ToolIcon__penMode",
         `ToolIcon_size_${DEFAULT_SIZE2}`,
         {
@@ -24983,7 +24946,7 @@ var PenModeButton = (props) => {
       ),
       title: `${props.title}`,
       children: [
-        /* @__PURE__ */ jsx90(
+        /* @__PURE__ */ jsx89(
           "input",
           {
             className: "ToolIcon_type_checkbox",
@@ -24994,18 +24957,18 @@ var PenModeButton = (props) => {
             "aria-label": props.title
           }
         ),
-        /* @__PURE__ */ jsx90("div", { className: "ToolIcon__icon", children: PenModeIcon })
+        /* @__PURE__ */ jsx89("div", { className: "ToolIcon__icon", children: PenModeIcon })
       ]
     }
   );
 };
 
 // components/footer/Footer.tsx
-import clsx40 from "clsx";
+import clsx39 from "clsx";
 
 // components/HelpButton.tsx
-import { jsx as jsx91 } from "react/jsx-runtime";
-var HelpButton = (props) => /* @__PURE__ */ jsx91(
+import { jsx as jsx90 } from "react/jsx-runtime";
+var HelpButton = (props) => /* @__PURE__ */ jsx90(
   "button",
   {
     className: "help-icon",
@@ -25018,7 +24981,7 @@ var HelpButton = (props) => /* @__PURE__ */ jsx91(
 );
 
 // components/footer/Footer.tsx
-import { jsx as jsx92, jsxs as jsxs52 } from "react/jsx-runtime";
+import { jsx as jsx91, jsxs as jsxs52 } from "react/jsx-runtime";
 var Footer = ({
   appState,
   actionManager,
@@ -25034,34 +24997,34 @@ var Footer = ({
       role: "contentinfo",
       className: "layer-ui__wrapper__footer App-menu App-menu_bottom",
       children: [
-        /* @__PURE__ */ jsx92(
+        /* @__PURE__ */ jsx91(
           "div",
           {
-            className: clsx40("layer-ui__wrapper__footer-left zen-mode-transition", {
+            className: clsx39("layer-ui__wrapper__footer-left zen-mode-transition", {
               "layer-ui__wrapper__footer-left--transition-left": appState.zenModeEnabled
             }),
-            children: /* @__PURE__ */ jsx92(Stack_default.Col, { gap: 2, children: /* @__PURE__ */ jsxs52(Section, { heading: "canvasActions", children: [
-              /* @__PURE__ */ jsx92(
+            children: /* @__PURE__ */ jsx91(Stack_default.Col, { gap: 2, children: /* @__PURE__ */ jsxs52(Section, { heading: "canvasActions", children: [
+              /* @__PURE__ */ jsx91(
                 ZoomActions,
                 {
                   renderAction: actionManager.renderAction,
                   zoom: appState.zoom
                 }
               ),
-              !appState.viewModeEnabled && /* @__PURE__ */ jsx92(
+              !appState.viewModeEnabled && /* @__PURE__ */ jsx91(
                 UndoRedoActions,
                 {
                   renderAction: actionManager.renderAction,
-                  className: clsx40("zen-mode-transition", {
+                  className: clsx39("zen-mode-transition", {
                     "layer-ui__wrapper__footer-left--transition-bottom": appState.zenModeEnabled
                   })
                 }
               ),
-              showFinalize && /* @__PURE__ */ jsx92(
+              showFinalize && /* @__PURE__ */ jsx91(
                 FinalizeAction,
                 {
                   renderAction: actionManager.renderAction,
-                  className: clsx40("zen-mode-transition", {
+                  className: clsx39("zen-mode-transition", {
                     "layer-ui__wrapper__footer-left--transition-left": appState.zenModeEnabled
                   })
                 }
@@ -25069,16 +25032,16 @@ var Footer = ({
             ] }) })
           }
         ),
-        /* @__PURE__ */ jsx92(FooterCenterTunnel.Out, {}),
-        /* @__PURE__ */ jsx92(
+        /* @__PURE__ */ jsx91(FooterCenterTunnel.Out, {}),
+        /* @__PURE__ */ jsx91(
           "div",
           {
-            className: clsx40("layer-ui__wrapper__footer-right zen-mode-transition", {
+            className: clsx39("layer-ui__wrapper__footer-right zen-mode-transition", {
               "transition-right": appState.zenModeEnabled
             }),
             children: /* @__PURE__ */ jsxs52("div", { style: { position: "relative" }, children: [
-              renderWelcomeScreen && /* @__PURE__ */ jsx92(WelcomeScreenHelpHintTunnel.Out, {}),
-              /* @__PURE__ */ jsx92(
+              renderWelcomeScreen && /* @__PURE__ */ jsx91(WelcomeScreenHelpHintTunnel.Out, {}),
+              /* @__PURE__ */ jsx91(
                 HelpButton,
                 {
                   onClick: () => actionManager.executeAction(actionShortcuts)
@@ -25087,7 +25050,7 @@ var Footer = ({
             ] })
           }
         ),
-        /* @__PURE__ */ jsx92(
+        /* @__PURE__ */ jsx91(
           ExitZenModeAction,
           {
             actionManager,
@@ -25102,7 +25065,7 @@ var Footer_default = Footer;
 Footer.displayName = "Footer";
 
 // components/Sidebar/Sidebar.tsx
-import clsx43 from "clsx";
+import clsx42 from "clsx";
 import {
   useEffect as useEffect30,
   useLayoutEffect as useLayoutEffect7,
@@ -25114,7 +25077,7 @@ import {
 } from "react";
 
 // components/Sidebar/SidebarHeader.tsx
-import clsx41 from "clsx";
+import clsx40 from "clsx";
 import { useContext as useContext2 } from "react";
 
 // components/Sidebar/common.ts
@@ -25122,7 +25085,7 @@ import React32 from "react";
 var SidebarPropsContext = React32.createContext({});
 
 // components/Sidebar/SidebarHeader.tsx
-import { jsx as jsx93, jsxs as jsxs53 } from "react/jsx-runtime";
+import { jsx as jsx92, jsxs as jsxs53 } from "react/jsx-runtime";
 var SidebarHeader = ({
   children,
   className
@@ -25133,12 +25096,12 @@ var SidebarHeader = ({
   return /* @__PURE__ */ jsxs53(
     "div",
     {
-      className: clsx41("sidebar__header", className),
+      className: clsx40("sidebar__header", className),
       "data-testid": "sidebar-header",
       children: [
         children,
         /* @__PURE__ */ jsxs53("div", { className: "sidebar__header__buttons", children: [
-          renderDockButton && /* @__PURE__ */ jsx93(Tooltip, { label: t("labels.sidebarLock"), children: /* @__PURE__ */ jsx93(
+          renderDockButton && /* @__PURE__ */ jsx92(Tooltip, { label: t("labels.sidebarLock"), children: /* @__PURE__ */ jsx92(
             Button,
             {
               onSelect: () => props.onDock?.(!props.docked),
@@ -25149,7 +25112,7 @@ var SidebarHeader = ({
               children: PinIcon
             }
           ) }),
-          /* @__PURE__ */ jsx93(
+          /* @__PURE__ */ jsx92(
             Button,
             {
               "data-testid": "sidebar-close",
@@ -25168,14 +25131,14 @@ SidebarHeader.displayName = "SidebarHeader";
 
 // components/Sidebar/SidebarTabTrigger.tsx
 import * as RadixTabs from "@radix-ui/react-tabs";
-import { jsx as jsx94 } from "react/jsx-runtime";
+import { jsx as jsx93 } from "react/jsx-runtime";
 var SidebarTabTrigger = ({
   children,
   tab,
   onSelect,
   ...rest
 }) => {
-  return /* @__PURE__ */ jsx94(RadixTabs.Trigger, { value: tab, asChild: true, onSelect, children: /* @__PURE__ */ jsx94(
+  return /* @__PURE__ */ jsx93(RadixTabs.Trigger, { value: tab, asChild: true, onSelect, children: /* @__PURE__ */ jsx93(
     "button",
     {
       type: "button",
@@ -25189,18 +25152,18 @@ SidebarTabTrigger.displayName = "SidebarTabTrigger";
 
 // components/Sidebar/SidebarTabTriggers.tsx
 import * as RadixTabs2 from "@radix-ui/react-tabs";
-import { jsx as jsx95 } from "react/jsx-runtime";
+import { jsx as jsx94 } from "react/jsx-runtime";
 var SidebarTabTriggers = ({
   children,
   ...rest
 }) => {
-  return /* @__PURE__ */ jsx95(RadixTabs2.List, { className: "sidebar-triggers", ...rest, children });
+  return /* @__PURE__ */ jsx94(RadixTabs2.List, { className: "sidebar-triggers", ...rest, children });
 };
 SidebarTabTriggers.displayName = "SidebarTabTriggers";
 
 // components/Sidebar/SidebarTrigger.tsx
-import clsx42 from "clsx";
-import { jsx as jsx96, jsxs as jsxs54 } from "react/jsx-runtime";
+import clsx41 from "clsx";
+import { jsx as jsx95, jsxs as jsxs54 } from "react/jsx-runtime";
 var SidebarTrigger = ({
   name,
   tab,
@@ -25214,7 +25177,7 @@ var SidebarTrigger = ({
   const setAppState = useExcalidrawSetAppState();
   const appState = useUIAppState();
   return /* @__PURE__ */ jsxs54("label", { title, className: "sidebar-trigger__label-element", children: [
-    /* @__PURE__ */ jsx96(
+    /* @__PURE__ */ jsx95(
       "input",
       {
         className: "ToolIcon_type_checkbox",
@@ -25230,9 +25193,9 @@ var SidebarTrigger = ({
         "aria-keyshortcuts": "0"
       }
     ),
-    /* @__PURE__ */ jsxs54("div", { className: clsx42("sidebar-trigger", className), style, children: [
-      icon && /* @__PURE__ */ jsx96("div", { children: icon }),
-      children && /* @__PURE__ */ jsx96("div", { className: "sidebar-trigger__label", children })
+    /* @__PURE__ */ jsxs54("div", { className: clsx41("sidebar-trigger", className), style, children: [
+      icon && /* @__PURE__ */ jsx95("div", { children: icon }),
+      children && /* @__PURE__ */ jsx95("div", { className: "sidebar-trigger__label", children })
     ] })
   ] });
 };
@@ -25240,7 +25203,7 @@ SidebarTrigger.displayName = "SidebarTrigger";
 
 // components/Sidebar/SidebarTabs.tsx
 import * as RadixTabs3 from "@radix-ui/react-tabs";
-import { jsx as jsx97 } from "react/jsx-runtime";
+import { jsx as jsx96 } from "react/jsx-runtime";
 var SidebarTabs = ({
   children,
   ...rest
@@ -25251,7 +25214,7 @@ var SidebarTabs = ({
     return null;
   }
   const { name } = appState.openSidebar;
-  return /* @__PURE__ */ jsx97(
+  return /* @__PURE__ */ jsx96(
     RadixTabs3.Root,
     {
       className: "sidebar-tabs-root",
@@ -25269,18 +25232,18 @@ SidebarTabs.displayName = "SidebarTabs";
 
 // components/Sidebar/SidebarTab.tsx
 import * as RadixTabs4 from "@radix-ui/react-tabs";
-import { jsx as jsx98 } from "react/jsx-runtime";
+import { jsx as jsx97 } from "react/jsx-runtime";
 var SidebarTab = ({
   tab,
   children,
   ...rest
 }) => {
-  return /* @__PURE__ */ jsx98(RadixTabs4.Content, { ...rest, value: tab, "data-testid": tab, children });
+  return /* @__PURE__ */ jsx97(RadixTabs4.Content, { ...rest, value: tab, "data-testid": tab, children });
 };
 SidebarTab.displayName = "SidebarTab";
 
 // components/Sidebar/Sidebar.tsx
-import { jsx as jsx99 } from "react/jsx-runtime";
+import { jsx as jsx98 } from "react/jsx-runtime";
 import { createElement } from "react";
 var isSidebarDockedAtom = atom(false);
 var SidebarInner = forwardRef4(
@@ -25354,13 +25317,13 @@ var SidebarInner = forwardRef4(
         document.removeEventListener("keydown" /* KEYDOWN */, handleKeyDown);
       };
     }, [closeLibrary, docked, device.editor.canFitSidebar]);
-    return /* @__PURE__ */ jsx99(
+    return /* @__PURE__ */ jsx98(
       Island,
       {
         ...rest,
-        className: clsx43("sidebar", { "sidebar--docked": docked }, className),
+        className: clsx42("sidebar", { "sidebar--docked": docked }, className),
         ref: islandRef,
-        children: /* @__PURE__ */ jsx99(SidebarPropsContext.Provider, { value: headerPropsRef.current, children })
+        children: /* @__PURE__ */ jsx98(SidebarPropsContext.Provider, { value: headerPropsRef.current, children })
       }
     );
   }
@@ -25408,7 +25371,7 @@ Sidebar.displayName = "Sidebar";
 
 // components/hoc/withInternalFallback.tsx
 import { useLayoutEffect as useLayoutEffect8, useRef as useRef26 } from "react";
-import { jsx as jsx100 } from "react/jsx-runtime";
+import { jsx as jsx99 } from "react/jsx-runtime";
 var withInternalFallback = (componentName, Component) => {
   const renderAtom = atom(0);
   const WrapperComponent = (props) => {
@@ -25453,7 +25416,7 @@ var withInternalFallback = (componentName, Component) => {
     ) {
       return null;
     }
-    return /* @__PURE__ */ jsx100(Component, { ...props });
+    return /* @__PURE__ */ jsx99(Component, { ...props });
   };
   WrapperComponent.displayName = componentName;
   return WrapperComponent;
@@ -25475,7 +25438,7 @@ __export(DefaultItems_exports, {
   Socials: () => Socials,
   ToggleTheme: () => ToggleTheme
 });
-import clsx45 from "clsx";
+import clsx44 from "clsx";
 
 // components/OverwriteConfirm/OverwriteConfirmState.ts
 var overwriteConfirmStateAtom = atom({
@@ -25502,23 +25465,23 @@ async function openConfirmModal({
 }
 
 // components/RadioGroup.tsx
-import clsx44 from "clsx";
-import { jsx as jsx101, jsxs as jsxs55 } from "react/jsx-runtime";
+import clsx43 from "clsx";
+import { jsx as jsx100, jsxs as jsxs55 } from "react/jsx-runtime";
 var RadioGroup = function({
   onChange,
   value,
   choices,
   name
 }) {
-  return /* @__PURE__ */ jsx101("div", { className: "RadioGroup", children: choices.map((choice) => /* @__PURE__ */ jsxs55(
+  return /* @__PURE__ */ jsx100("div", { className: "RadioGroup", children: choices.map((choice) => /* @__PURE__ */ jsxs55(
     "div",
     {
-      className: clsx44("RadioGroup__choice", {
+      className: clsx43("RadioGroup__choice", {
         active: choice.value === value
       }),
       title: choice.ariaLabel,
       children: [
-        /* @__PURE__ */ jsx101(
+        /* @__PURE__ */ jsx100(
           "input",
           {
             name,
@@ -25536,7 +25499,7 @@ var RadioGroup = function({
 };
 
 // components/dropdownMenu/DropdownMenuItemContentRadio.tsx
-import { Fragment as Fragment14, jsx as jsx102, jsxs as jsxs56 } from "react/jsx-runtime";
+import { Fragment as Fragment14, jsx as jsx101, jsxs as jsxs56 } from "react/jsx-runtime";
 var DropdownMenuItemContentRadio = ({
   value,
   shortcut,
@@ -25548,8 +25511,8 @@ var DropdownMenuItemContentRadio = ({
   const device = useDevice();
   return /* @__PURE__ */ jsxs56(Fragment14, { children: [
     /* @__PURE__ */ jsxs56("div", { className: "dropdown-menu-item-base dropdown-menu-item-bare", children: [
-      /* @__PURE__ */ jsx102("label", { className: "dropdown-menu-item__text", htmlFor: name, children }),
-      /* @__PURE__ */ jsx102(
+      /* @__PURE__ */ jsx101("label", { className: "dropdown-menu-item__text", htmlFor: name, children }),
+      /* @__PURE__ */ jsx101(
         RadioGroup,
         {
           name,
@@ -25559,14 +25522,14 @@ var DropdownMenuItemContentRadio = ({
         }
       )
     ] }),
-    shortcut && !device.editor.isMobile && /* @__PURE__ */ jsx102("div", { className: "dropdown-menu-item__shortcut dropdown-menu-item__shortcut--orphaned", children: shortcut })
+    shortcut && !device.editor.isMobile && /* @__PURE__ */ jsx101("div", { className: "dropdown-menu-item__shortcut dropdown-menu-item__shortcut--orphaned", children: shortcut })
   ] });
 };
 DropdownMenuItemContentRadio.displayName = "DropdownMenuItemContentRadio";
 var DropdownMenuItemContentRadio_default = DropdownMenuItemContentRadio;
 
 // components/main-menu/DefaultItems.tsx
-import { Fragment as Fragment15, jsx as jsx103, jsxs as jsxs57 } from "react/jsx-runtime";
+import { Fragment as Fragment15, jsx as jsx102, jsxs as jsxs57 } from "react/jsx-runtime";
 var LoadScene = () => {
   const { t: t2 } = useI18n();
   const actionManager = useExcalidrawActionManager();
@@ -25579,19 +25542,19 @@ var LoadScene = () => {
       title: t2("overwriteConfirm.modal.loadFromFile.title"),
       actionLabel: t2("overwriteConfirm.modal.loadFromFile.button"),
       color: "warning",
-      description: /* @__PURE__ */ jsx103(
+      description: /* @__PURE__ */ jsx102(
         Trans_default,
         {
           i18nKey: "overwriteConfirm.modal.loadFromFile.description",
-          bold: (text) => /* @__PURE__ */ jsx103("strong", { children: text }),
-          br: () => /* @__PURE__ */ jsx103("br", {})
+          bold: (text) => /* @__PURE__ */ jsx102("strong", { children: text }),
+          br: () => /* @__PURE__ */ jsx102("br", {})
         }
       )
     })) {
       actionManager.executeAction(actionLoadScene);
     }
   };
-  return /* @__PURE__ */ jsx103(
+  return /* @__PURE__ */ jsx102(
     DropdownMenuItem_default,
     {
       icon: LoadIcon,
@@ -25610,7 +25573,7 @@ var SaveToActiveFile = () => {
   if (!actionManager.isActionEnabled(actionSaveToActiveFile)) {
     return null;
   }
-  return /* @__PURE__ */ jsx103(
+  return /* @__PURE__ */ jsx102(
     DropdownMenuItem_default,
     {
       shortcut: getShortcutFromShortcutName("saveScene"),
@@ -25626,7 +25589,7 @@ SaveToActiveFile.displayName = "SaveToActiveFile";
 var SaveAsImage = () => {
   const setAppState = useExcalidrawSetAppState();
   const { t: t2 } = useI18n();
-  return /* @__PURE__ */ jsx103(
+  return /* @__PURE__ */ jsx102(
     DropdownMenuItem_default,
     {
       icon: ExportImageIcon,
@@ -25642,7 +25605,7 @@ SaveAsImage.displayName = "SaveAsImage";
 var CommandPalette2 = (opts) => {
   const setAppState = useExcalidrawSetAppState();
   const { t: t2 } = useI18n();
-  return /* @__PURE__ */ jsx103(
+  return /* @__PURE__ */ jsx102(
     DropdownMenuItem_default,
     {
       icon: boltIcon,
@@ -25662,7 +25625,7 @@ CommandPalette2.displayName = "CommandPalette";
 var SearchMenu = (opts) => {
   const { t: t2 } = useI18n();
   const actionManager = useExcalidrawActionManager();
-  return /* @__PURE__ */ jsx103(
+  return /* @__PURE__ */ jsx102(
     DropdownMenuItem_default,
     {
       icon: searchIcon,
@@ -25681,7 +25644,7 @@ SearchMenu.displayName = "SearchMenu";
 var Help = () => {
   const { t: t2 } = useI18n();
   const actionManager = useExcalidrawActionManager();
-  return /* @__PURE__ */ jsx103(
+  return /* @__PURE__ */ jsx102(
     DropdownMenuItem_default,
     {
       "data-testid": "help-menu-item",
@@ -25701,7 +25664,7 @@ var ClearCanvas = () => {
   if (!actionManager.isActionEnabled(actionClearCanvas)) {
     return null;
   }
-  return /* @__PURE__ */ jsx103(
+  return /* @__PURE__ */ jsx102(
     DropdownMenuItem_default,
     {
       icon: TrashIcon,
@@ -25722,7 +25685,7 @@ var ToggleTheme = (props) => {
     return null;
   }
   if (props?.allowSystemTheme) {
-    return /* @__PURE__ */ jsx103(
+    return /* @__PURE__ */ jsx102(
       DropdownMenuItemContentRadio_default,
       {
         name: "theme",
@@ -25749,7 +25712,7 @@ var ToggleTheme = (props) => {
       }
     );
   }
-  return /* @__PURE__ */ jsx103(
+  return /* @__PURE__ */ jsx102(
     DropdownMenuItem_default,
     {
       onSelect: (event) => {
@@ -25780,7 +25743,7 @@ var ChangeCanvasBackground = () => {
     return null;
   }
   return /* @__PURE__ */ jsxs57("div", { style: { marginTop: "0.5rem" }, children: [
-    /* @__PURE__ */ jsx103(
+    /* @__PURE__ */ jsx102(
       "div",
       {
         "data-testid": "canvas-background-label",
@@ -25788,14 +25751,14 @@ var ChangeCanvasBackground = () => {
         children: t2("labels.canvasBackground")
       }
     ),
-    /* @__PURE__ */ jsx103("div", { style: { padding: "0 0.625rem" }, children: actionManager.renderAction("changeViewBackgroundColor") })
+    /* @__PURE__ */ jsx102("div", { style: { padding: "0 0.625rem" }, children: actionManager.renderAction("changeViewBackgroundColor") })
   ] });
 };
 ChangeCanvasBackground.displayName = "ChangeCanvasBackground";
 var Export = () => {
   const { t: t2 } = useI18n();
   const setAppState = useExcalidrawSetAppState();
-  return /* @__PURE__ */ jsx103(
+  return /* @__PURE__ */ jsx102(
     DropdownMenuItem_default,
     {
       icon: ExportIcon,
@@ -25812,7 +25775,7 @@ Export.displayName = "Export";
 var Socials = () => {
   const { t: t2 } = useI18n();
   return /* @__PURE__ */ jsxs57(Fragment15, { children: [
-    /* @__PURE__ */ jsx103(
+    /* @__PURE__ */ jsx102(
       DropdownMenuItemLink_default,
       {
         icon: GithubIcon,
@@ -25821,7 +25784,7 @@ var Socials = () => {
         children: "GitHub"
       }
     ),
-    /* @__PURE__ */ jsx103(
+    /* @__PURE__ */ jsx102(
       DropdownMenuItemLink_default,
       {
         icon: XBrandIcon,
@@ -25830,7 +25793,7 @@ var Socials = () => {
         children: t2("labels.followUs")
       }
     ),
-    /* @__PURE__ */ jsx103(
+    /* @__PURE__ */ jsx102(
       DropdownMenuItemLink_default,
       {
         icon: DiscordIcon,
@@ -25847,12 +25810,12 @@ var LiveCollaborationTrigger = ({
   isCollaborating
 }) => {
   const { t: t2 } = useI18n();
-  return /* @__PURE__ */ jsx103(
+  return /* @__PURE__ */ jsx102(
     DropdownMenuItem_default,
     {
       "data-testid": "collab-button",
       icon: usersIcon,
-      className: clsx45({
+      className: clsx44({
         "active-collab": isCollaborating
       }),
       onSelect,
@@ -25863,7 +25826,7 @@ var LiveCollaborationTrigger = ({
 LiveCollaborationTrigger.displayName = "LiveCollaborationTrigger";
 
 // components/main-menu/MainMenu.tsx
-import { jsx as jsx104, jsxs as jsxs58 } from "react/jsx-runtime";
+import { jsx as jsx103, jsxs as jsxs58 } from "react/jsx-runtime";
 var MainMenu = Object.assign(
   withInternalFallback(
     "MainMenu",
@@ -25876,8 +25839,8 @@ var MainMenu = Object.assign(
       const appState = useUIAppState();
       const setAppState = useExcalidrawSetAppState();
       const onClickOutside = device.editor.isMobile ? void 0 : () => setAppState({ openMenu: null });
-      return /* @__PURE__ */ jsx104(MainMenuTunnel.In, { children: /* @__PURE__ */ jsxs58(DropdownMenu_default, { open: appState.openMenu === "canvas", children: [
-        /* @__PURE__ */ jsx104(
+      return /* @__PURE__ */ jsx103(MainMenuTunnel.In, { children: /* @__PURE__ */ jsxs58(DropdownMenu_default, { open: appState.openMenu === "canvas", children: [
+        /* @__PURE__ */ jsx103(
           DropdownMenu_default.Trigger,
           {
             onToggle: () => {
@@ -25900,8 +25863,8 @@ var MainMenu = Object.assign(
             children: [
               children,
               device.editor.isMobile && appState.collaborators.size > 0 && /* @__PURE__ */ jsxs58("fieldset", { className: "UserList-Wrapper", children: [
-                /* @__PURE__ */ jsx104("legend", { children: t("labels.collaborators") }),
-                /* @__PURE__ */ jsx104(
+                /* @__PURE__ */ jsx103("legend", { children: t("labels.collaborators") }),
+                /* @__PURE__ */ jsx103(
                   UserList,
                   {
                     mobile: true,
@@ -25929,9 +25892,9 @@ var MainMenu = Object.assign(
 var MainMenu_default = MainMenu;
 
 // components/FilledButton.tsx
-import clsx46 from "clsx";
+import clsx45 from "clsx";
 import { forwardRef as forwardRef5, useState as useState26 } from "react";
-import { jsx as jsx105, jsxs as jsxs59 } from "react/jsx-runtime";
+import { jsx as jsx104, jsxs as jsxs59 } from "react/jsx-runtime";
 var FilledButton = forwardRef5(
   ({
     children,
@@ -25968,10 +25931,10 @@ var FilledButton = forwardRef5(
     };
     const _status = isLoading ? "loading" : status;
     color = _status === "success" ? "success" : color;
-    return /* @__PURE__ */ jsx105(
+    return /* @__PURE__ */ jsx104(
       "button",
       {
-        className: clsx46(
+        className: clsx45(
           "ExcButton",
           `ExcButton--color-${color}`,
           `ExcButton--variant-${variant}`,
@@ -25986,8 +25949,8 @@ var FilledButton = forwardRef5(
         ref,
         disabled: _status === "loading" || _status === "success",
         children: /* @__PURE__ */ jsxs59("div", { className: "ExcButton__contents", children: [
-          _status === "loading" ? /* @__PURE__ */ jsx105(Spinner_default, { className: "ExcButton__statusIcon" }) : _status === "success" && /* @__PURE__ */ jsx105("div", { className: "ExcButton__statusIcon", children: tablerCheckIcon }),
-          icon && /* @__PURE__ */ jsx105("div", { className: "ExcButton__icon", "aria-hidden": true, children: icon }),
+          _status === "loading" ? /* @__PURE__ */ jsx104(Spinner_default, { className: "ExcButton__statusIcon" }) : _status === "success" && /* @__PURE__ */ jsx104("div", { className: "ExcButton__statusIcon", children: tablerCheckIcon }),
+          icon && /* @__PURE__ */ jsx104("div", { className: "ExcButton__icon", "aria-hidden": true, children: icon }),
           variant !== "icon" && (children ?? label)
         ] })
       }
@@ -25996,7 +25959,7 @@ var FilledButton = forwardRef5(
 );
 
 // components/OverwriteConfirm/OverwriteConfirmActions.tsx
-import { jsx as jsx106, jsxs as jsxs60 } from "react/jsx-runtime";
+import { jsx as jsx105, jsxs as jsxs60 } from "react/jsx-runtime";
 var Action = ({
   title,
   children,
@@ -26004,9 +25967,9 @@ var Action = ({
   onClick
 }) => {
   return /* @__PURE__ */ jsxs60("div", { className: "OverwriteConfirm__Actions__Action", children: [
-    /* @__PURE__ */ jsx106("h4", { children: title }),
-    /* @__PURE__ */ jsx106("div", { className: "OverwriteConfirm__Actions__Action__content", children }),
-    /* @__PURE__ */ jsx106(
+    /* @__PURE__ */ jsx105("h4", { children: title }),
+    /* @__PURE__ */ jsx105("div", { className: "OverwriteConfirm__Actions__Action__content", children }),
+    /* @__PURE__ */ jsx105(
       FilledButton,
       {
         variant: "outlined",
@@ -26023,7 +25986,7 @@ var ExportToImage = () => {
   const { t: t2 } = useI18n();
   const actionManager = useExcalidrawActionManager();
   const setAppState = useExcalidrawSetAppState();
-  return /* @__PURE__ */ jsx106(
+  return /* @__PURE__ */ jsx105(
     Action,
     {
       title: t2("overwriteConfirm.action.exportToImage.title"),
@@ -26039,7 +26002,7 @@ var ExportToImage = () => {
 var SaveToDisk = () => {
   const { t: t2 } = useI18n();
   const actionManager = useExcalidrawActionManager();
-  return /* @__PURE__ */ jsx106(
+  return /* @__PURE__ */ jsx105(
     Action,
     {
       title: t2("overwriteConfirm.action.saveToDisk.title"),
@@ -26053,7 +26016,7 @@ var SaveToDisk = () => {
 };
 var Actions = Object.assign(
   ({ children }) => {
-    return /* @__PURE__ */ jsx106("div", { className: "OverwriteConfirm__Actions", children });
+    return /* @__PURE__ */ jsx105("div", { className: "OverwriteConfirm__Actions", children });
   },
   {
     ExportToImage,
@@ -26062,7 +26025,7 @@ var Actions = Object.assign(
 );
 
 // components/OverwriteConfirm/OverwriteConfirm.tsx
-import { jsx as jsx107, jsxs as jsxs61 } from "react/jsx-runtime";
+import { jsx as jsx106, jsxs as jsxs61 } from "react/jsx-runtime";
 var OverwriteConfirmDialog = Object.assign(
   withInternalFallback(
     "OverwriteConfirmDialog",
@@ -26082,17 +26045,17 @@ var OverwriteConfirmDialog = Object.assign(
         overwriteConfirmState.onConfirm();
         setState((state) => ({ ...state, active: false }));
       };
-      return /* @__PURE__ */ jsx107(OverwriteConfirmDialogTunnel.In, { children: /* @__PURE__ */ jsx107(Dialog, { onCloseRequest: handleClose, title: false, size: 916, children: /* @__PURE__ */ jsxs61("div", { className: "OverwriteConfirm", children: [
-        /* @__PURE__ */ jsx107("h3", { children: overwriteConfirmState.title }),
+      return /* @__PURE__ */ jsx106(OverwriteConfirmDialogTunnel.In, { children: /* @__PURE__ */ jsx106(Dialog, { onCloseRequest: handleClose, title: false, size: 916, children: /* @__PURE__ */ jsxs61("div", { className: "OverwriteConfirm", children: [
+        /* @__PURE__ */ jsx106("h3", { children: overwriteConfirmState.title }),
         /* @__PURE__ */ jsxs61(
           "div",
           {
             className: `OverwriteConfirm__Description OverwriteConfirm__Description--color-${overwriteConfirmState.color}`,
             children: [
-              /* @__PURE__ */ jsx107("div", { className: "OverwriteConfirm__Description__icon", children: alertTriangleIcon }),
-              /* @__PURE__ */ jsx107("div", { children: overwriteConfirmState.description }),
-              /* @__PURE__ */ jsx107("div", { className: "OverwriteConfirm__Description__spacer" }),
-              /* @__PURE__ */ jsx107(
+              /* @__PURE__ */ jsx106("div", { className: "OverwriteConfirm__Description__icon", children: alertTriangleIcon }),
+              /* @__PURE__ */ jsx106("div", { children: overwriteConfirmState.description }),
+              /* @__PURE__ */ jsx106("div", { className: "OverwriteConfirm__Description__spacer" }),
+              /* @__PURE__ */ jsx106(
                 FilledButton,
                 {
                   color: overwriteConfirmState.color,
@@ -26104,7 +26067,7 @@ var OverwriteConfirmDialog = Object.assign(
             ]
           }
         ),
-        /* @__PURE__ */ jsx107(Actions, { children })
+        /* @__PURE__ */ jsx106(Actions, { children })
       ] }) }) });
     }
   ),
@@ -26115,13 +26078,13 @@ var OverwriteConfirmDialog = Object.assign(
 );
 
 // components/DefaultSidebar.tsx
-import clsx48 from "clsx";
+import clsx47 from "clsx";
 
 // components/SearchMenu.tsx
-import clsx47 from "clsx";
+import clsx46 from "clsx";
 import debounce2 from "lodash.debounce";
 import { Fragment as Fragment16, memo as memo4, useEffect as useEffect31, useRef as useRef27, useState as useState27 } from "react";
-import { Fragment as Fragment17, jsx as jsx108, jsxs as jsxs62 } from "react/jsx-runtime";
+import { Fragment as Fragment17, jsx as jsx107, jsxs as jsxs62 } from "react/jsx-runtime";
 var searchQueryAtom = atom("");
 var searchItemInFocusAtom = atom(null);
 var SEARCH_DEBOUNCE = 350;
@@ -26324,7 +26287,7 @@ var SearchMenu2 = () => {
   }, [setAppState, stableState, app]);
   const matchCount = `${searchMatches.items.length} ${searchMatches.items.length === 1 ? t("search.singleResult") : t("search.multipleResults")}`;
   return /* @__PURE__ */ jsxs62("div", { className: "layer-ui__search", children: [
-    /* @__PURE__ */ jsx108("div", { className: "layer-ui__search-header", children: /* @__PURE__ */ jsx108(
+    /* @__PURE__ */ jsx107("div", { className: "layer-ui__search-header", children: /* @__PURE__ */ jsx107(
       TextField,
       {
         className: CLASSES.SEARCH_MENU_INPUT_WRAPPER,
@@ -26363,9 +26326,9 @@ var SearchMenu2 = () => {
           focusIndex + 1,
           " / ",
           matchCount
-        ] }) : /* @__PURE__ */ jsx108("div", { children: matchCount }),
+        ] }) : /* @__PURE__ */ jsx107("div", { children: matchCount }),
         /* @__PURE__ */ jsxs62("div", { className: "result-nav", children: [
-          /* @__PURE__ */ jsx108(
+          /* @__PURE__ */ jsx107(
             Button,
             {
               onSelect: () => {
@@ -26375,7 +26338,7 @@ var SearchMenu2 = () => {
               children: collapseDownIcon
             }
           ),
-          /* @__PURE__ */ jsx108(
+          /* @__PURE__ */ jsx107(
             Button,
             {
               onSelect: () => {
@@ -26387,9 +26350,9 @@ var SearchMenu2 = () => {
           )
         ] })
       ] }),
-      searchMatches.items.length === 0 && searchQuery && searchedQueryRef.current && /* @__PURE__ */ jsx108("div", { style: { margin: "1rem auto" }, children: t("search.noMatch") })
+      searchMatches.items.length === 0 && searchQuery && searchedQueryRef.current && /* @__PURE__ */ jsx107("div", { style: { margin: "1rem auto" }, children: t("search.noMatch") })
     ] }),
-    /* @__PURE__ */ jsx108(
+    /* @__PURE__ */ jsx107(
       MatchList,
       {
         matches: searchMatches,
@@ -26413,11 +26376,11 @@ var ListItem = (props) => {
     ),
     props.preview.moreAfter ? "..." : ""
   ];
-  return /* @__PURE__ */ jsx108(
+  return /* @__PURE__ */ jsx107(
     "div",
     {
       tabIndex: -1,
-      className: clsx47("layer-ui__result-item", {
+      className: clsx46("layer-ui__result-item", {
         active: props.highlighted
       }),
       onClick: props.onClick,
@@ -26426,12 +26389,12 @@ var ListItem = (props) => {
           ref?.scrollIntoView({ behavior: "auto", block: "nearest" });
         }
       },
-      children: /* @__PURE__ */ jsx108("div", { className: "preview-text", children: preview.flatMap((text, idx) => /* @__PURE__ */ jsx108(Fragment16, { children: idx === 2 ? /* @__PURE__ */ jsx108("b", { children: text }) : text }, idx)) })
+      children: /* @__PURE__ */ jsx107("div", { className: "preview-text", children: preview.flatMap((text, idx) => /* @__PURE__ */ jsx107(Fragment16, { children: idx === 2 ? /* @__PURE__ */ jsx107("b", { children: text }) : text }, idx)) })
     }
   );
 };
 var MatchListBase = (props) => {
-  return /* @__PURE__ */ jsx108("div", { className: "layer-ui__search-result-container", children: props.matches.items.map((searchMatch, index) => /* @__PURE__ */ jsx108(
+  return /* @__PURE__ */ jsx107("div", { className: "layer-ui__search-result-container", children: props.matches.items.map((searchMatch, index) => /* @__PURE__ */ jsx107(
     ListItem,
     {
       searchQuery: props.searchQuery,
@@ -26612,13 +26575,13 @@ var handleSearch = debounce2(
 );
 
 // components/DefaultSidebar.tsx
-import { jsx as jsx109, jsxs as jsxs63 } from "react/jsx-runtime";
+import { jsx as jsx108, jsxs as jsxs63 } from "react/jsx-runtime";
 import { createElement as createElement2 } from "react";
 var DefaultSidebarTrigger = withInternalFallback(
   "DefaultSidebarTrigger",
   (props) => {
     const { DefaultSidebarTriggerTunnel } = useTunnels();
-    return /* @__PURE__ */ jsx109(DefaultSidebarTriggerTunnel.In, { children: /* @__PURE__ */ jsx109(
+    return /* @__PURE__ */ jsx108(DefaultSidebarTriggerTunnel.In, { children: /* @__PURE__ */ jsx108(
       Sidebar.Trigger,
       {
         ...props,
@@ -26631,7 +26594,7 @@ var DefaultSidebarTrigger = withInternalFallback(
 DefaultSidebarTrigger.displayName = "DefaultSidebarTrigger";
 var DefaultTabTriggers = ({ children }) => {
   const { DefaultSidebarTabTriggersTunnel } = useTunnels();
-  return /* @__PURE__ */ jsx109(DefaultSidebarTabTriggersTunnel.In, { children });
+  return /* @__PURE__ */ jsx108(DefaultSidebarTabTriggersTunnel.In, { children });
 };
 DefaultTabTriggers.displayName = "DefaultTabTriggers";
 var DefaultSidebar = Object.assign(
@@ -26654,7 +26617,7 @@ var DefaultSidebar = Object.assign(
           ...rest,
           name: "default",
           key: "default",
-          className: clsx48("default-sidebar", className),
+          className: clsx47("default-sidebar", className),
           docked: isForceDocked || (docked ?? appState.defaultSidebarDockedPreference),
           onDock: (
             // `onDock=false` disables docking.
@@ -26668,13 +26631,13 @@ var DefaultSidebar = Object.assign(
           )
         },
         /* @__PURE__ */ jsxs63(Sidebar.Tabs, { children: [
-          /* @__PURE__ */ jsx109(Sidebar.Header, { children: /* @__PURE__ */ jsxs63(Sidebar.TabTriggers, { children: [
-            /* @__PURE__ */ jsx109(Sidebar.TabTrigger, { tab: CANVAS_SEARCH_TAB, children: searchIcon }),
-            /* @__PURE__ */ jsx109(Sidebar.TabTrigger, { tab: LIBRARY_SIDEBAR_TAB, children: LibraryIcon }),
-            /* @__PURE__ */ jsx109(DefaultSidebarTabTriggersTunnel.Out, {})
+          /* @__PURE__ */ jsx108(Sidebar.Header, { children: /* @__PURE__ */ jsxs63(Sidebar.TabTriggers, { children: [
+            /* @__PURE__ */ jsx108(Sidebar.TabTrigger, { tab: CANVAS_SEARCH_TAB, children: searchIcon }),
+            /* @__PURE__ */ jsx108(Sidebar.TabTrigger, { tab: LIBRARY_SIDEBAR_TAB, children: LibraryIcon }),
+            /* @__PURE__ */ jsx108(DefaultSidebarTabTriggersTunnel.Out, {})
           ] }) }),
-          /* @__PURE__ */ jsx109(Sidebar.Tab, { tab: LIBRARY_SIDEBAR_TAB, children: /* @__PURE__ */ jsx109(LibraryMenu, {}) }),
-          /* @__PURE__ */ jsx109(Sidebar.Tab, { tab: CANVAS_SEARCH_TAB, children: /* @__PURE__ */ jsx109(SearchMenu2, {}) }),
+          /* @__PURE__ */ jsx108(Sidebar.Tab, { tab: LIBRARY_SIDEBAR_TAB, children: /* @__PURE__ */ jsx108(LibraryMenu, {}) }),
+          /* @__PURE__ */ jsx108(Sidebar.Tab, { tab: CANVAS_SEARCH_TAB, children: /* @__PURE__ */ jsx108(SearchMenu2, {}) }),
           children
         ] })
       );
@@ -26694,7 +26657,7 @@ import { useState as useState28, useRef as useRef29, useEffect as useEffect33, u
 
 // components/TTDDialog/TTDDialogInput.tsx
 import { useEffect as useEffect32, useRef as useRef28 } from "react";
-import { jsx as jsx110 } from "react/jsx-runtime";
+import { jsx as jsx109 } from "react/jsx-runtime";
 var TTDDialogInput = ({
   input,
   placeholder,
@@ -26722,7 +26685,7 @@ var TTDDialogInput = ({
       };
     }
   }, []);
-  return /* @__PURE__ */ jsx110(
+  return /* @__PURE__ */ jsx109(
     "textarea",
     {
       className: "ttd-dialog-input",
@@ -26736,7 +26699,7 @@ var TTDDialogInput = ({
 };
 
 // components/TTDDialog/TTDDialogOutput.tsx
-import { jsx as jsx111, jsxs as jsxs64 } from "react/jsx-runtime";
+import { jsx as jsx110, jsxs as jsxs64 } from "react/jsx-runtime";
 var ErrorComp = ({ error }) => {
   return /* @__PURE__ */ jsxs64(
     "div",
@@ -26745,7 +26708,7 @@ var ErrorComp = ({ error }) => {
       className: "ttd-dialog-output-error",
       children: [
         "Error! ",
-        /* @__PURE__ */ jsx111("p", { children: error })
+        /* @__PURE__ */ jsx110("p", { children: error })
       ]
     }
   );
@@ -26756,21 +26719,21 @@ var TTDDialogOutput = ({
   loaded
 }) => {
   return /* @__PURE__ */ jsxs64("div", { className: "ttd-dialog-output-wrapper", children: [
-    error && /* @__PURE__ */ jsx111(ErrorComp, { error: error.message }),
-    loaded ? /* @__PURE__ */ jsx111(
+    error && /* @__PURE__ */ jsx110(ErrorComp, { error: error.message }),
+    loaded ? /* @__PURE__ */ jsx110(
       "div",
       {
         ref: canvasRef,
         style: { opacity: error ? "0.15" : 1 },
         className: "ttd-dialog-output-canvas-container"
       }
-    ) : /* @__PURE__ */ jsx111(Spinner_default, { size: "2rem" })
+    ) : /* @__PURE__ */ jsx110(Spinner_default, { size: "2rem" })
   ] });
 };
 
 // components/TTDDialog/TTDDialogPanel.tsx
-import clsx49 from "clsx";
-import { jsx as jsx112, jsxs as jsxs65 } from "react/jsx-runtime";
+import clsx48 from "clsx";
+import { jsx as jsx111, jsxs as jsxs65 } from "react/jsx-runtime";
 var TTDDialogPanel = ({
   label,
   children,
@@ -26783,14 +26746,14 @@ var TTDDialogPanel = ({
 }) => {
   return /* @__PURE__ */ jsxs65("div", { className: "ttd-dialog-panel", children: [
     /* @__PURE__ */ jsxs65("div", { className: "ttd-dialog-panel__header", children: [
-      /* @__PURE__ */ jsx112("label", { children: label }),
+      /* @__PURE__ */ jsx111("label", { children: label }),
       renderTopRight?.()
     ] }),
     children,
     /* @__PURE__ */ jsxs65(
       "div",
       {
-        className: clsx49("ttd-dialog-panel-button-container", {
+        className: clsx48("ttd-dialog-panel-button-container", {
           invisible: !panelAction
         }),
         style: { display: "flex", alignItems: "center" },
@@ -26803,11 +26766,11 @@ var TTDDialogPanel = ({
               },
               disabled: panelActionDisabled || onTextSubmitInProgess,
               children: [
-                /* @__PURE__ */ jsxs65("div", { className: clsx49({ invisible: onTextSubmitInProgess }), children: [
+                /* @__PURE__ */ jsxs65("div", { className: clsx48({ invisible: onTextSubmitInProgess }), children: [
                   panelAction?.label,
-                  panelAction?.icon && /* @__PURE__ */ jsx112("span", { children: panelAction.icon })
+                  panelAction?.icon && /* @__PURE__ */ jsx111("span", { children: panelAction.icon })
                 ] }),
-                onTextSubmitInProgess && /* @__PURE__ */ jsx112(Spinner_default, {})
+                onTextSubmitInProgess && /* @__PURE__ */ jsx111(Spinner_default, {})
               ]
             }
           ),
@@ -26820,17 +26783,17 @@ var TTDDialogPanel = ({
 };
 
 // components/TTDDialog/TTDDialogPanels.tsx
-import { jsx as jsx113 } from "react/jsx-runtime";
+import { jsx as jsx112 } from "react/jsx-runtime";
 var TTDDialogPanels = ({ children }) => {
-  return /* @__PURE__ */ jsx113("div", { className: "ttd-dialog-panels", children });
+  return /* @__PURE__ */ jsx112("div", { className: "ttd-dialog-panels", children });
 };
 
 // components/TTDDialog/TTDDialogSubmitShortcut.tsx
-import { jsx as jsx114, jsxs as jsxs66 } from "react/jsx-runtime";
+import { jsx as jsx113, jsxs as jsxs66 } from "react/jsx-runtime";
 var TTDDialogSubmitShortcut = () => {
   return /* @__PURE__ */ jsxs66("div", { className: "ttd-dialog-submit-shortcut", children: [
-    /* @__PURE__ */ jsx114("div", { className: "ttd-dialog-submit-shortcut__key", children: getShortcutKey("CtrlOrCmd") }),
-    /* @__PURE__ */ jsx114("div", { className: "ttd-dialog-submit-shortcut__key", children: getShortcutKey("Enter") })
+    /* @__PURE__ */ jsx113("div", { className: "ttd-dialog-submit-shortcut__key", children: getShortcutKey("CtrlOrCmd") }),
+    /* @__PURE__ */ jsx113("div", { className: "ttd-dialog-submit-shortcut__key", children: getShortcutKey("Enter") })
   ] });
 };
 
@@ -26938,7 +26901,7 @@ var insertToEditor = ({
 };
 
 // components/TTDDialog/MermaidToExcalidraw.tsx
-import { Fragment as Fragment18, jsx as jsx115, jsxs as jsxs67 } from "react/jsx-runtime";
+import { Fragment as Fragment18, jsx as jsx114, jsxs as jsxs67 } from "react/jsx-runtime";
 var MERMAID_EXAMPLE = "flowchart TD\n A[Christmas] -->|Get money| B(Go shopping)\n B --> C{Let me think}\n C -->|One| D[Laptop]\n C -->|Two| E[iPhone]\n C -->|Three| F[Car]";
 var debouncedSaveMermaidDefinition = debounce(saveMermaidDataToStorage, 300);
 var MermaidToExcalidraw = ({
@@ -26981,17 +26944,17 @@ var MermaidToExcalidraw = ({
     });
   };
   return /* @__PURE__ */ jsxs67(Fragment18, { children: [
-    /* @__PURE__ */ jsx115("div", { className: "ttd-dialog-desc", children: /* @__PURE__ */ jsx115(
+    /* @__PURE__ */ jsx114("div", { className: "ttd-dialog-desc", children: /* @__PURE__ */ jsx114(
       Trans_default,
       {
         i18nKey: "mermaid.description",
-        flowchartLink: (el) => /* @__PURE__ */ jsx115("a", { href: "https://mermaid.js.org/syntax/flowchart.html", children: el }),
-        sequenceLink: (el) => /* @__PURE__ */ jsx115("a", { href: "https://mermaid.js.org/syntax/sequenceDiagram.html", children: el }),
-        classLink: (el) => /* @__PURE__ */ jsx115("a", { href: "https://mermaid.js.org/syntax/classDiagram.html", children: el })
+        flowchartLink: (el) => /* @__PURE__ */ jsx114("a", { href: "https://mermaid.js.org/syntax/flowchart.html", children: el }),
+        sequenceLink: (el) => /* @__PURE__ */ jsx114("a", { href: "https://mermaid.js.org/syntax/sequenceDiagram.html", children: el }),
+        classLink: (el) => /* @__PURE__ */ jsx114("a", { href: "https://mermaid.js.org/syntax/classDiagram.html", children: el })
       }
     ) }),
     /* @__PURE__ */ jsxs67(TTDDialogPanels, { children: [
-      /* @__PURE__ */ jsx115(TTDDialogPanel, { label: t("mermaid.syntax"), children: /* @__PURE__ */ jsx115(
+      /* @__PURE__ */ jsx114(TTDDialogPanel, { label: t("mermaid.syntax"), children: /* @__PURE__ */ jsx114(
         TTDDialogInput,
         {
           input: text,
@@ -27002,7 +26965,7 @@ var MermaidToExcalidraw = ({
           }
         }
       ) }),
-      /* @__PURE__ */ jsx115(
+      /* @__PURE__ */ jsx114(
         TTDDialogPanel,
         {
           label: t("mermaid.preview"),
@@ -27013,8 +26976,8 @@ var MermaidToExcalidraw = ({
             label: t("mermaid.button"),
             icon: ArrowRightIcon
           },
-          renderSubmitShortcut: () => /* @__PURE__ */ jsx115(TTDDialogSubmitShortcut, {}),
-          children: /* @__PURE__ */ jsx115(
+          renderSubmitShortcut: () => /* @__PURE__ */ jsx114(TTDDialogSubmitShortcut, {}),
+          children: /* @__PURE__ */ jsx114(
             TTDDialogOutput,
             {
               canvasRef,
@@ -27032,12 +26995,12 @@ var MermaidToExcalidraw_default = MermaidToExcalidraw;
 // components/TTDDialog/TTDDialogTabs.tsx
 import * as RadixTabs5 from "@radix-ui/react-tabs";
 import { useRef as useRef30 } from "react";
-import { jsx as jsx116 } from "react/jsx-runtime";
+import { jsx as jsx115 } from "react/jsx-runtime";
 var TTDDialogTabs = (props) => {
   const setAppState = useExcalidrawSetAppState();
   const rootRef = useRef30(null);
   const minHeightRef = useRef30(0);
-  return /* @__PURE__ */ jsx116(
+  return /* @__PURE__ */ jsx115(
     RadixTabs5.Root,
     {
       ref: rootRef,
@@ -27070,42 +27033,42 @@ var TTDDialogTabs_default = TTDDialogTabs;
 
 // components/TTDDialog/TTDDialogTabTriggers.tsx
 import * as RadixTabs6 from "@radix-ui/react-tabs";
-import { jsx as jsx117 } from "react/jsx-runtime";
+import { jsx as jsx116 } from "react/jsx-runtime";
 var TTDDialogTabTriggers = ({
   children,
   ...rest
 }) => {
-  return /* @__PURE__ */ jsx117(RadixTabs6.List, { className: "ttd-dialog-triggers", ...rest, children });
+  return /* @__PURE__ */ jsx116(RadixTabs6.List, { className: "ttd-dialog-triggers", ...rest, children });
 };
 TTDDialogTabTriggers.displayName = "TTDDialogTabTriggers";
 
 // components/TTDDialog/TTDDialogTabTrigger.tsx
 import * as RadixTabs7 from "@radix-ui/react-tabs";
-import { jsx as jsx118 } from "react/jsx-runtime";
+import { jsx as jsx117 } from "react/jsx-runtime";
 var TTDDialogTabTrigger = ({
   children,
   tab,
   onSelect,
   ...rest
 }) => {
-  return /* @__PURE__ */ jsx118(RadixTabs7.Trigger, { value: tab, asChild: true, onSelect, children: /* @__PURE__ */ jsx118("button", { type: "button", className: "ttd-dialog-tab-trigger", ...rest, children }) });
+  return /* @__PURE__ */ jsx117(RadixTabs7.Trigger, { value: tab, asChild: true, onSelect, children: /* @__PURE__ */ jsx117("button", { type: "button", className: "ttd-dialog-tab-trigger", ...rest, children }) });
 };
 TTDDialogTabTrigger.displayName = "TTDDialogTabTrigger";
 
 // components/TTDDialog/TTDDialogTab.tsx
 import * as RadixTabs8 from "@radix-ui/react-tabs";
-import { jsx as jsx119 } from "react/jsx-runtime";
+import { jsx as jsx118 } from "react/jsx-runtime";
 var TTDDialogTab = ({
   tab,
   children,
   ...rest
 }) => {
-  return /* @__PURE__ */ jsx119(RadixTabs8.Content, { ...rest, value: tab, children });
+  return /* @__PURE__ */ jsx118(RadixTabs8.Content, { ...rest, value: tab, children });
 };
 TTDDialogTab.displayName = "TTDDialogTab";
 
 // components/TTDDialog/TTDDialog.tsx
-import { jsx as jsx120, jsxs as jsxs68 } from "react/jsx-runtime";
+import { jsx as jsx119, jsxs as jsxs68 } from "react/jsx-runtime";
 var MIN_PROMPT_LENGTH = 3;
 var MAX_PROMPT_LENGTH = 1e3;
 var rateLimitsAtom = atom(null);
@@ -27115,7 +27078,7 @@ var TTDDialog = (props) => {
   if (appState.openDialog?.name !== "ttd") {
     return null;
   }
-  return /* @__PURE__ */ jsx120(TTDDialogBase, { ...props, tab: appState.openDialog.tab });
+  return /* @__PURE__ */ jsx119(TTDDialogBase, { ...props, tab: appState.openDialog.tab });
 };
 var TTDDialogBase = withInternalFallback(
   "TTDDialogBase",
@@ -27229,7 +27192,7 @@ TTD mermaid definition render errror: ${error3.message}`,
     }, [mermaidToExcalidrawLib.api]);
     const data = useRef31({ elements: [], files: null });
     const [error, setError] = useState29(null);
-    return /* @__PURE__ */ jsx120(
+    return /* @__PURE__ */ jsx119(
       Dialog,
       {
         className: "ttd-dialog",
@@ -27241,10 +27204,10 @@ TTD mermaid definition render errror: ${error3.message}`,
         ...rest,
         autofocus: false,
         children: /* @__PURE__ */ jsxs68(TTDDialogTabs_default, { dialog: "ttd", tab, children: [
-          "__fallback" in rest && rest.__fallback ? /* @__PURE__ */ jsx120("p", { className: "dialog-mermaid-title", children: t("mermaid.title") }) : /* @__PURE__ */ jsxs68(TTDDialogTabTriggers, { children: [
-            /* @__PURE__ */ jsx120(TTDDialogTabTrigger, { tab: "text-to-diagram", children: /* @__PURE__ */ jsxs68("div", { style: { display: "flex", alignItems: "center" }, children: [
+          "__fallback" in rest && rest.__fallback ? /* @__PURE__ */ jsx119("p", { className: "dialog-mermaid-title", children: t("mermaid.title") }) : /* @__PURE__ */ jsxs68(TTDDialogTabTriggers, { children: [
+            /* @__PURE__ */ jsx119(TTDDialogTabTrigger, { tab: "text-to-diagram", children: /* @__PURE__ */ jsxs68("div", { style: { display: "flex", alignItems: "center" }, children: [
               t("labels.textToDiagram"),
-              /* @__PURE__ */ jsx120(
+              /* @__PURE__ */ jsx119(
                 "div",
                 {
                   style: {
@@ -27262,18 +27225,18 @@ TTD mermaid definition render errror: ${error3.message}`,
                 }
               )
             ] }) }),
-            /* @__PURE__ */ jsx120(TTDDialogTabTrigger, { tab: "mermaid", children: "Mermaid" })
+            /* @__PURE__ */ jsx119(TTDDialogTabTrigger, { tab: "mermaid", children: "Mermaid" })
           ] }),
-          /* @__PURE__ */ jsx120(TTDDialogTab, { className: "ttd-dialog-content", tab: "mermaid", children: /* @__PURE__ */ jsx120(
+          /* @__PURE__ */ jsx119(TTDDialogTab, { className: "ttd-dialog-content", tab: "mermaid", children: /* @__PURE__ */ jsx119(
             MermaidToExcalidraw_default,
             {
               mermaidToExcalidrawLib
             }
           ) }),
           !("__fallback" in rest) && /* @__PURE__ */ jsxs68(TTDDialogTab, { className: "ttd-dialog-content", tab: "text-to-diagram", children: [
-            /* @__PURE__ */ jsx120("div", { className: "ttd-dialog-desc", children: "Currently we use Mermaid as a middle step, so you'll get best results if you describe a diagram, workflow, flow chart, and similar." }),
+            /* @__PURE__ */ jsx119("div", { className: "ttd-dialog-desc", children: "Currently we use Mermaid as a middle step, so you'll get best results if you describe a diagram, workflow, flow chart, and similar." }),
             /* @__PURE__ */ jsxs68(TTDDialogPanels, { children: [
-              /* @__PURE__ */ jsx120(
+              /* @__PURE__ */ jsx119(
                 TTDDialogPanel,
                 {
                   label: t("labels.prompt"),
@@ -27304,7 +27267,7 @@ TTD mermaid definition render errror: ${error3.message}`,
                       }
                     );
                   },
-                  renderSubmitShortcut: () => /* @__PURE__ */ jsx120(TTDDialogSubmitShortcut, {}),
+                  renderSubmitShortcut: () => /* @__PURE__ */ jsx119(TTDDialogSubmitShortcut, {}),
                   renderBottomRight: () => {
                     if (typeof ttdGeneration?.generatedResponse === "string") {
                       return /* @__PURE__ */ jsxs68(
@@ -27324,7 +27287,7 @@ TTD mermaid definition render errror: ${error3.message}`,
                           },
                           children: [
                             "View as Mermaid",
-                            /* @__PURE__ */ jsx120(InlineIcon, { icon: ArrowRightIcon })
+                            /* @__PURE__ */ jsx119(InlineIcon, { icon: ArrowRightIcon })
                           ]
                         }
                       );
@@ -27351,7 +27314,7 @@ TTD mermaid definition render errror: ${error3.message}`,
                     }
                     return null;
                   },
-                  children: /* @__PURE__ */ jsx120(
+                  children: /* @__PURE__ */ jsx119(
                     TTDDialogInput,
                     {
                       onChange: handleTextChange,
@@ -27364,7 +27327,7 @@ TTD mermaid definition render errror: ${error3.message}`,
                   )
                 }
               ),
-              /* @__PURE__ */ jsx120(
+              /* @__PURE__ */ jsx119(
                 TTDDialogPanel,
                 {
                   label: "Preview",
@@ -27376,7 +27339,7 @@ TTD mermaid definition render errror: ${error3.message}`,
                     label: "Insert",
                     icon: ArrowRightIcon
                   },
-                  children: /* @__PURE__ */ jsx120(
+                  children: /* @__PURE__ */ jsx119(
                     TTDDialogOutput,
                     {
                       canvasRef: someRandomDivRef,
@@ -27395,12 +27358,12 @@ TTD mermaid definition render errror: ${error3.message}`,
 );
 
 // components/Stats/index.tsx
-import clsx51 from "clsx";
+import clsx50 from "clsx";
 import throttle2 from "lodash.throttle";
 import { useEffect as useEffect36, useMemo as useMemo9, useState as useState31, memo as memo5 } from "react";
 
 // components/Stats/DragInput.tsx
-import clsx50 from "clsx";
+import clsx49 from "clsx";
 import { useEffect as useEffect35, useRef as useRef32, useState as useState30 } from "react";
 
 // components/Stats/utils.ts
@@ -27505,7 +27468,7 @@ var updateBindings = (latestElement, elementsMap, elements, scene, options) => {
 };
 
 // components/Stats/DragInput.tsx
-import { jsx as jsx121, jsxs as jsxs69 } from "react/jsx-runtime";
+import { jsx as jsx120, jsxs as jsxs69 } from "react/jsx-runtime";
 var StatsDragInput = ({
   label,
   icon,
@@ -27609,10 +27572,10 @@ var StatsDragInput = ({
   return /* @__PURE__ */ jsxs69(
     "div",
     {
-      className: clsx50("drag-input-container", !editable && "disabled"),
+      className: clsx49("drag-input-container", !editable && "disabled"),
       "data-testid": label,
       children: [
-        /* @__PURE__ */ jsx121(
+        /* @__PURE__ */ jsx120(
           "div",
           {
             className: "drag-input-label",
@@ -27692,10 +27655,10 @@ var StatsDragInput = ({
                 labelRef.current.style.cursor = "ew-resize";
               }
             },
-            children: icon ? /* @__PURE__ */ jsx121(InlineIcon, { icon }) : label
+            children: icon ? /* @__PURE__ */ jsx120(InlineIcon, { icon }) : label
           }
         ),
-        /* @__PURE__ */ jsx121(
+        /* @__PURE__ */ jsx120(
           "input",
           {
             className: "drag-input",
@@ -27742,7 +27705,7 @@ var StatsDragInput = ({
 var DragInput_default = StatsDragInput;
 
 // components/Stats/Angle.tsx
-import { jsx as jsx122 } from "react/jsx-runtime";
+import { jsx as jsx121 } from "react/jsx-runtime";
 var STEP_SIZE = 15;
 var handleDegreeChange = ({
   accumulatedChange,
@@ -27790,7 +27753,7 @@ var handleDegreeChange = ({
   }
 };
 var Angle = ({ element, scene, appState, property }) => {
-  return /* @__PURE__ */ jsx122(
+  return /* @__PURE__ */ jsx121(
     DragInput_default,
     {
       label: "A",
@@ -27808,7 +27771,7 @@ var Angle = ({ element, scene, appState, property }) => {
 var Angle_default = Angle;
 
 // components/Stats/CanvasGrid.tsx
-import { jsx as jsx123 } from "react/jsx-runtime";
+import { jsx as jsx122 } from "react/jsx-runtime";
 var STEP_SIZE2 = 5;
 var CanvasGrid = ({
   property,
@@ -27816,7 +27779,7 @@ var CanvasGrid = ({
   appState,
   setAppState
 }) => {
-  return /* @__PURE__ */ jsx123(
+  return /* @__PURE__ */ jsx122(
     DragInput_default,
     {
       label: "Grid step",
@@ -27859,7 +27822,7 @@ var CanvasGrid = ({
 var CanvasGrid_default = CanvasGrid;
 
 // components/Stats/Dimension.tsx
-import { jsx as jsx124 } from "react/jsx-runtime";
+import { jsx as jsx123 } from "react/jsx-runtime";
 var STEP_SIZE3 = 10;
 var _shouldKeepAspectRatio = (element) => {
   return element.type === "image";
@@ -28039,7 +28002,7 @@ var DimensionDragInput = ({
       value = round(element.crop.height * ratio, 2);
     }
   }
-  return /* @__PURE__ */ jsx124(
+  return /* @__PURE__ */ jsx123(
     DragInput_default,
     {
       label: property === "width" ? "W" : "H",
@@ -28056,7 +28019,7 @@ var DimensionDragInput = ({
 var Dimension_default = DimensionDragInput;
 
 // components/Stats/FontSize.tsx
-import { jsx as jsx125 } from "react/jsx-runtime";
+import { jsx as jsx124 } from "react/jsx-runtime";
 var MIN_FONT_SIZE2 = 4;
 var STEP_SIZE4 = 4;
 var handleFontSizeChange = ({
@@ -28104,7 +28067,7 @@ var FontSize = ({ element, scene, appState, property }) => {
   if (!_element) {
     return null;
   }
-  return /* @__PURE__ */ jsx125(
+  return /* @__PURE__ */ jsx124(
     DragInput_default,
     {
       label: "F",
@@ -28121,7 +28084,7 @@ var FontSize = ({ element, scene, appState, property }) => {
 var FontSize_default = FontSize;
 
 // components/Stats/MultiAngle.tsx
-import { jsx as jsx126 } from "react/jsx-runtime";
+import { jsx as jsx125 } from "react/jsx-runtime";
 var STEP_SIZE5 = 15;
 var handleDegreeChange2 = ({
   accumulatedChange,
@@ -28201,7 +28164,7 @@ var MultiAngle = ({
   const editable = editableLatestIndividualElements.some(
     (el) => isPropertyEditable(el, "angle")
   );
-  return /* @__PURE__ */ jsx126(
+  return /* @__PURE__ */ jsx125(
     DragInput_default,
     {
       label: "A",
@@ -28220,7 +28183,7 @@ var MultiAngle_default = MultiAngle;
 
 // components/Stats/MultiDimension.tsx
 import { useMemo as useMemo7 } from "react";
-import { jsx as jsx127 } from "react/jsx-runtime";
+import { jsx as jsx126 } from "react/jsx-runtime";
 var STEP_SIZE6 = 10;
 var getResizedUpdates = (anchorX, anchorY, scale, origElement) => {
   const offsetX = origElement.x - anchorX;
@@ -28488,7 +28451,7 @@ var MultiDimension = ({
   );
   const value = new Set(sizes).size === 1 ? Math.round(sizes[0] * 100) / 100 : "Mixed";
   const editable = sizes.length > 0;
-  return /* @__PURE__ */ jsx127(
+  return /* @__PURE__ */ jsx126(
     DragInput_default,
     {
       label: property === "width" ? "W" : "H",
@@ -28505,7 +28468,7 @@ var MultiDimension = ({
 var MultiDimension_default = MultiDimension;
 
 // components/Stats/MultiFontSize.tsx
-import { jsx as jsx128 } from "react/jsx-runtime";
+import { jsx as jsx127 } from "react/jsx-runtime";
 var MIN_FONT_SIZE3 = 4;
 var STEP_SIZE7 = 4;
 var getApplicableTextElements = (elements, elementsMap) => elements.reduce(
@@ -28605,7 +28568,7 @@ var MultiFontSize = ({
   );
   const value = new Set(fontSizes).size === 1 ? fontSizes[0] : "Mixed";
   const editable = fontSizes.length > 0;
-  return /* @__PURE__ */ jsx128(
+  return /* @__PURE__ */ jsx127(
     DragInput_default,
     {
       label: "F",
@@ -28624,7 +28587,7 @@ var MultiFontSize_default = MultiFontSize;
 
 // components/Stats/MultiPosition.tsx
 import { useMemo as useMemo8 } from "react";
-import { jsx as jsx129 } from "react/jsx-runtime";
+import { jsx as jsx128 } from "react/jsx-runtime";
 var STEP_SIZE8 = 10;
 var moveElements = (property, changeInTopX, changeInTopY, elements, originalElements, elementsMap, originalElementsMap, scene) => {
   for (let i = 0; i < elements.length; i++) {
@@ -28795,7 +28758,7 @@ var MultiPosition = ({
     [atomicUnits, elementsMap, property]
   );
   const value = new Set(positions).size === 1 ? positions[0] : "Mixed";
-  return /* @__PURE__ */ jsx129(
+  return /* @__PURE__ */ jsx128(
     DragInput_default,
     {
       label: property === "x" ? "X" : "Y",
@@ -28811,7 +28774,7 @@ var MultiPosition = ({
 var MultiPosition_default = MultiPosition;
 
 // components/Stats/Position.tsx
-import { jsx as jsx130 } from "react/jsx-runtime";
+import { jsx as jsx129 } from "react/jsx-runtime";
 var STEP_SIZE9 = 10;
 var handlePositionChange2 = ({
   accumulatedChange,
@@ -28950,7 +28913,7 @@ var Position = ({
       );
     }
   }
-  return /* @__PURE__ */ jsx130(
+  return /* @__PURE__ */ jsx129(
     DragInput_default,
     {
       label: property === "x" ? "X" : "Y",
@@ -28966,7 +28929,7 @@ var Position = ({
 var Position_default = Position;
 
 // components/Stats/index.tsx
-import { Fragment as Fragment19, jsx as jsx131, jsxs as jsxs70 } from "react/jsx-runtime";
+import { Fragment as Fragment19, jsx as jsx130, jsxs as jsxs70 } from "react/jsx-runtime";
 var STATS_TIMEOUT = 50;
 var Stats = (props) => {
   const appState = useExcalidrawAppState();
@@ -28976,7 +28939,7 @@ var Stats = (props) => {
     includeBoundTextElement: false
   });
   const gridModeEnabled = isGridModeEnabled(props.app);
-  return /* @__PURE__ */ jsx131(
+  return /* @__PURE__ */ jsx130(
     StatsInner,
     {
       ...props,
@@ -28993,10 +28956,10 @@ var StatsRow = ({
   heading,
   style,
   ...rest
-}) => /* @__PURE__ */ jsx131(
+}) => /* @__PURE__ */ jsx130(
   "div",
   {
-    className: clsx51("exc-stats__row", { "exc-stats__row--heading": heading }),
+    className: clsx50("exc-stats__row", { "exc-stats__row--heading": heading }),
     style: {
       gridTemplateColumns: `repeat(${columns}, 1fr)`,
       ...style
@@ -29011,7 +28974,7 @@ var StatsRows = ({
   order,
   style,
   ...rest
-}) => /* @__PURE__ */ jsx131("div", { className: "exc-stats__rows", style: { order, ...style }, ...rest, children });
+}) => /* @__PURE__ */ jsx130("div", { className: "exc-stats__rows", style: { order, ...style }, ...rest, children });
 StatsRows.displayName = "StatsRows";
 Stats.StatsRow = StatsRow;
 Stats.StatsRows = StatsRows;
@@ -29060,15 +29023,15 @@ var StatsInner = memo5(
     const _frameAndChildrenSelectedTogether = useMemo9(() => {
       return frameAndChildrenSelectedTogether(selectedElements);
     }, [selectedElements]);
-    return /* @__PURE__ */ jsx131("div", { className: "exc-stats", children: /* @__PURE__ */ jsxs70(Island, { padding: 3, children: [
+    return /* @__PURE__ */ jsx130("div", { className: "exc-stats", children: /* @__PURE__ */ jsxs70(Island, { padding: 3, children: [
       /* @__PURE__ */ jsxs70("div", { className: "title", children: [
-        /* @__PURE__ */ jsx131("h2", { children: t("stats.title") }),
-        /* @__PURE__ */ jsx131("div", { className: "close", onClick: onClose, children: CloseIcon })
+        /* @__PURE__ */ jsx130("h2", { children: t("stats.title") }),
+        /* @__PURE__ */ jsx130("div", { className: "close", onClick: onClose, children: CloseIcon })
       ] }),
       /* @__PURE__ */ jsxs70(
         Collapsible_default,
         {
-          label: /* @__PURE__ */ jsx131("h3", { children: t("stats.generalStats") }),
+          label: /* @__PURE__ */ jsx130("h3", { children: t("stats.generalStats") }),
           open: !!(appState.stats.panels & STATS_PANELS.generalStats),
           openTrigger: () => setAppState((state) => {
             return {
@@ -29080,22 +29043,22 @@ var StatsInner = memo5(
           }),
           children: [
             /* @__PURE__ */ jsxs70(StatsRows, { children: [
-              /* @__PURE__ */ jsx131(StatsRow, { heading: true, children: t("stats.scene") }),
+              /* @__PURE__ */ jsx130(StatsRow, { heading: true, children: t("stats.scene") }),
               /* @__PURE__ */ jsxs70(StatsRow, { columns: 2, children: [
-                /* @__PURE__ */ jsx131("div", { children: t("stats.shapes") }),
-                /* @__PURE__ */ jsx131("div", { children: elements.length })
+                /* @__PURE__ */ jsx130("div", { children: t("stats.shapes") }),
+                /* @__PURE__ */ jsx130("div", { children: elements.length })
               ] }),
               /* @__PURE__ */ jsxs70(StatsRow, { columns: 2, children: [
-                /* @__PURE__ */ jsx131("div", { children: t("stats.width") }),
-                /* @__PURE__ */ jsx131("div", { children: sceneDimension.width })
+                /* @__PURE__ */ jsx130("div", { children: t("stats.width") }),
+                /* @__PURE__ */ jsx130("div", { children: sceneDimension.width })
               ] }),
               /* @__PURE__ */ jsxs70(StatsRow, { columns: 2, children: [
-                /* @__PURE__ */ jsx131("div", { children: t("stats.height") }),
-                /* @__PURE__ */ jsx131("div", { children: sceneDimension.height })
+                /* @__PURE__ */ jsx130("div", { children: t("stats.height") }),
+                /* @__PURE__ */ jsx130("div", { children: sceneDimension.height })
               ] }),
               gridModeEnabled && /* @__PURE__ */ jsxs70(Fragment19, { children: [
-                /* @__PURE__ */ jsx131(StatsRow, { heading: true, children: "Canvas" }),
-                /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                /* @__PURE__ */ jsx130(StatsRow, { heading: true, children: "Canvas" }),
+                /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                   CanvasGrid_default,
                   {
                     property: "gridStep",
@@ -29110,17 +29073,17 @@ var StatsInner = memo5(
           ]
         }
       ),
-      !_frameAndChildrenSelectedTogether && selectedElements.length > 0 && /* @__PURE__ */ jsx131(
+      !_frameAndChildrenSelectedTogether && selectedElements.length > 0 && /* @__PURE__ */ jsx130(
         "div",
         {
           id: "elementStats",
           style: {
             marginTop: 12
           },
-          children: /* @__PURE__ */ jsx131(
+          children: /* @__PURE__ */ jsx130(
             Collapsible_default,
             {
-              label: /* @__PURE__ */ jsx131("h3", { children: t("stats.elementProperties") }),
+              label: /* @__PURE__ */ jsx130("h3", { children: t("stats.elementProperties") }),
               open: !!(appState.stats.panels & STATS_PANELS.elementProperties),
               openTrigger: () => setAppState((state) => {
                 return {
@@ -29132,16 +29095,16 @@ var StatsInner = memo5(
               }),
               children: /* @__PURE__ */ jsxs70(StatsRows, { children: [
                 singleElement && /* @__PURE__ */ jsxs70(Fragment19, { children: [
-                  cropMode && /* @__PURE__ */ jsx131(StatsRow, { heading: true, children: t("labels.unCroppedDimension") }),
+                  cropMode && /* @__PURE__ */ jsx130(StatsRow, { heading: true, children: t("labels.unCroppedDimension") }),
                   appState.croppingElementId && isImageElement(singleElement) && unCroppedDimension && /* @__PURE__ */ jsxs70(StatsRow, { columns: 2, children: [
-                    /* @__PURE__ */ jsx131("div", { children: t("stats.width") }),
-                    /* @__PURE__ */ jsx131("div", { children: round(unCroppedDimension.width, 2) })
+                    /* @__PURE__ */ jsx130("div", { children: t("stats.width") }),
+                    /* @__PURE__ */ jsx130("div", { children: round(unCroppedDimension.width, 2) })
                   ] }),
                   appState.croppingElementId && isImageElement(singleElement) && unCroppedDimension && /* @__PURE__ */ jsxs70(StatsRow, { columns: 2, children: [
-                    /* @__PURE__ */ jsx131("div", { children: t("stats.height") }),
-                    /* @__PURE__ */ jsx131("div", { children: round(unCroppedDimension.height, 2) })
+                    /* @__PURE__ */ jsx130("div", { children: t("stats.height") }),
+                    /* @__PURE__ */ jsx130("div", { children: round(unCroppedDimension.height, 2) })
                   ] }),
-                  /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(
                     StatsRow,
                     {
                       heading: true,
@@ -29150,7 +29113,7 @@ var StatsInner = memo5(
                       children: appState.croppingElementId ? t("labels.imageCropping") : t(`element.${singleElement.type}`)
                     }
                   ),
-                  /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     Position_default,
                     {
                       element: singleElement,
@@ -29160,7 +29123,7 @@ var StatsInner = memo5(
                       appState
                     }
                   ) }),
-                  /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     Position_default,
                     {
                       element: singleElement,
@@ -29170,7 +29133,7 @@ var StatsInner = memo5(
                       appState
                     }
                   ) }),
-                  /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     Dimension_default,
                     {
                       property: "width",
@@ -29179,7 +29142,7 @@ var StatsInner = memo5(
                       appState
                     }
                   ) }),
-                  /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     Dimension_default,
                     {
                       property: "height",
@@ -29188,7 +29151,7 @@ var StatsInner = memo5(
                       appState
                     }
                   ) }),
-                  !isElbowArrow(singleElement) && /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  !isElbowArrow(singleElement) && /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     Angle_default,
                     {
                       property: "angle",
@@ -29197,7 +29160,7 @@ var StatsInner = memo5(
                       appState
                     }
                   ) }),
-                  /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     FontSize_default,
                     {
                       property: "fontSize",
@@ -29208,12 +29171,12 @@ var StatsInner = memo5(
                   ) })
                 ] }),
                 multipleElements && /* @__PURE__ */ jsxs70(Fragment19, { children: [
-                  elementsAreInSameGroup(multipleElements) && /* @__PURE__ */ jsx131(StatsRow, { heading: true, children: t("element.group") }),
+                  elementsAreInSameGroup(multipleElements) && /* @__PURE__ */ jsx130(StatsRow, { heading: true, children: t("element.group") }),
                   /* @__PURE__ */ jsxs70(StatsRow, { columns: 2, style: { margin: "0.3125rem 0" }, children: [
-                    /* @__PURE__ */ jsx131("div", { children: t("stats.shapes") }),
-                    /* @__PURE__ */ jsx131("div", { children: selectedElements.length })
+                    /* @__PURE__ */ jsx130("div", { children: t("stats.shapes") }),
+                    /* @__PURE__ */ jsx130("div", { children: selectedElements.length })
                   ] }),
-                  /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     MultiPosition_default,
                     {
                       property: "x",
@@ -29224,7 +29187,7 @@ var StatsInner = memo5(
                       appState
                     }
                   ) }),
-                  /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     MultiPosition_default,
                     {
                       property: "y",
@@ -29235,7 +29198,7 @@ var StatsInner = memo5(
                       appState
                     }
                   ) }),
-                  /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     MultiDimension_default,
                     {
                       property: "width",
@@ -29246,7 +29209,7 @@ var StatsInner = memo5(
                       appState
                     }
                   ) }),
-                  /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     MultiDimension_default,
                     {
                       property: "height",
@@ -29257,7 +29220,7 @@ var StatsInner = memo5(
                       appState
                     }
                   ) }),
-                  /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     MultiAngle_default,
                     {
                       property: "angle",
@@ -29266,7 +29229,7 @@ var StatsInner = memo5(
                       appState
                     }
                   ) }),
-                  /* @__PURE__ */ jsx131(StatsRow, { children: /* @__PURE__ */ jsx131(
+                  /* @__PURE__ */ jsx130(StatsRow, { children: /* @__PURE__ */ jsx130(
                     MultiFontSize_default,
                     {
                       property: "fontSize",
@@ -29291,7 +29254,7 @@ var StatsInner = memo5(
 
 // components/ElementLinkDialog.tsx
 import { useCallback as useCallback12, useEffect as useEffect37, useState as useState32 } from "react";
-import { jsx as jsx132, jsxs as jsxs71 } from "react/jsx-runtime";
+import { jsx as jsx131, jsxs as jsxs71 } from "react/jsx-runtime";
 var ElementLinkDialog = ({
   sourceElementId,
   onClose,
@@ -29355,11 +29318,11 @@ var ElementLinkDialog = ({
   }, [appState, onClose, handleConfirm]);
   return /* @__PURE__ */ jsxs71("div", { className: "ElementLinkDialog", children: [
     /* @__PURE__ */ jsxs71("div", { className: "ElementLinkDialog__header", children: [
-      /* @__PURE__ */ jsx132("h2", { children: t("elementLink.title") }),
-      /* @__PURE__ */ jsx132("p", { children: t("elementLink.desc") })
+      /* @__PURE__ */ jsx131("h2", { children: t("elementLink.title") }),
+      /* @__PURE__ */ jsx131("p", { children: t("elementLink.desc") })
     ] }),
     /* @__PURE__ */ jsxs71("div", { className: "ElementLinkDialog__input", children: [
-      /* @__PURE__ */ jsx132(
+      /* @__PURE__ */ jsx131(
         TextField,
         {
           value: nextLink ?? "",
@@ -29378,7 +29341,7 @@ var ElementLinkDialog = ({
           selectOnRender: true
         }
       ),
-      originalLink && nextLink && /* @__PURE__ */ jsx132(
+      originalLink && nextLink && /* @__PURE__ */ jsx131(
         ToolButton,
         {
           type: "button",
@@ -29395,7 +29358,7 @@ var ElementLinkDialog = ({
       )
     ] }),
     /* @__PURE__ */ jsxs71("div", { className: "ElementLinkDialog__actions", children: [
-      /* @__PURE__ */ jsx132(
+      /* @__PURE__ */ jsx131(
         DialogActionButton_default,
         {
           label: t("buttons.cancel"),
@@ -29407,7 +29370,7 @@ var ElementLinkDialog = ({
           }
         }
       ),
-      /* @__PURE__ */ jsx132(
+      /* @__PURE__ */ jsx131(
         DialogActionButton_default,
         {
           label: t("buttons.confirm"),
@@ -29422,7 +29385,7 @@ var ElementLinkDialog_default = ElementLinkDialog;
 
 // components/ErrorDialog.tsx
 import React36, { useState as useState33 } from "react";
-import { Fragment as Fragment20, jsx as jsx133 } from "react/jsx-runtime";
+import { Fragment as Fragment20, jsx as jsx132 } from "react/jsx-runtime";
 var ErrorDialog = ({
   children,
   onClose
@@ -29436,15 +29399,37 @@ var ErrorDialog = ({
     }
     excalidrawContainer?.focus();
   }, [onClose, excalidrawContainer]);
-  return /* @__PURE__ */ jsx133(Fragment20, { children: modalIsShown && /* @__PURE__ */ jsx133(
+  return /* @__PURE__ */ jsx132(Fragment20, { children: modalIsShown && /* @__PURE__ */ jsx132(
     Dialog,
     {
       size: "small",
       onCloseRequest: handleClose,
       title: t("errorDialog.title"),
-      children: /* @__PURE__ */ jsx133("div", { style: { whiteSpace: "pre-wrap" }, children })
+      children: /* @__PURE__ */ jsx132("div", { style: { whiteSpace: "pre-wrap" }, children })
     }
   ) });
+};
+
+// components/HandButton.tsx
+import clsx51 from "clsx";
+import { jsx as jsx133 } from "react/jsx-runtime";
+var HandButton = (props) => {
+  return /* @__PURE__ */ jsx133(
+    ToolButton,
+    {
+      className: clsx51("Shape", { fillable: false }),
+      type: "radio",
+      icon: handIcon,
+      name: "editor-current-shape",
+      checked: props.checked,
+      title: `${props.title} \u2014 H`,
+      keyBindingLabel: !props.isMobile ? KEYS.H.toLocaleUpperCase() : void 0,
+      "aria-label": `${props.title} \u2014 H`,
+      "aria-keyshortcuts": KEYS.H,
+      "data-testid": `toolbar-hand`,
+      onChange: () => props.onChange?.()
+    }
+  );
 };
 
 // components/HelpDialog.tsx

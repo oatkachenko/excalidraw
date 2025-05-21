@@ -95,19 +95,6 @@ export const MobileMenu = ({
             <Stack.Col gap={4} align="center">
               <Stack.Row gap={1} className="App-toolbar-container">
                 {renderBreadcrumbs && renderBreadcrumbs(true, appState)}
-                {renderTopRightUI && renderTopRightUI(true, appState)}
-                <div className="mobile-misc-tools-container">
-                  {!appState.viewModeEnabled &&
-                    appState.openDialog?.name !== "elementLinkSelector" && (
-                      <DefaultSidebarTriggerTunnel.Out />
-                    )}
-                  <HandButton
-                    checked={isHandToolActive(appState)}
-                    onChange={() => onHandToolToggle()}
-                    title={t("toolBar.hand")}
-                    isMobile
-                  />
-                </div>
               </Stack.Row>
             </Stack.Col>
           )}
